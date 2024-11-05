@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "hexo": "^7.3.0",
+    "hexo-filter-mermaid-diagrams": "^1.0.5",
     "hexo-generator-archive": "^2.0.0",
     "hexo-generator-category": "^2.0.0",
     "hexo-generator-index": "^4.0.0",
@@ -21,10 +22,12 @@
     "hexo-renderer-markdown-it-plus": "^1.0.6",
     "hexo-renderer-stylus": "^3.0.1",
     "hexo-server": "^3.0.0",
+    "hexo-tag-kbd": "^0.0.1",
     "hexo-theme-landscape": "^1.0.0",
     "hexo-theme-redefine": "^2.7.3",
     "markdown-it-attrs": "^4.2.0",
     "markdown-it-imsize": "^2.0.1",
+    "markdown-it-kbd": "^2.2.2",
     "markdown-it-mathjax3": "^4.3.2",
     "markdown-it-task-lists": "^2.1.1"
   }

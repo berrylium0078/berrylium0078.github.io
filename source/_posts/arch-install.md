@@ -269,6 +269,23 @@ yay -S visual-studio-code-bin
 
 安装插件 `markdown all in one` 和 `math snippets`。
 
+### 配置登录界面
+
+sddm 的默认主题简直是清朝文物。这里我们换成自带的 `breeze` 主题。
+
+p.s. 主题文件夹为 `/usr/share/sddm/themes`
+
+以及 sddm 在我的 2k 显示屏上界面太小，需要改大一些。
+
+编辑 `/usr/lib/sddm/sddm.conf.d/default.conf`，找到对应位置改成：
+```conf
+[General]
+GreeterEnvironment=QT_SCREEN_SCALE_FACTORS=2,QT_FONT_DPI=192
+
+[Theme]
+Current=breeze
+```
+
 ### 其他软件
 
 按需安装。

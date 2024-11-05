@@ -60,6 +60,8 @@ npm install markdown-it-attrs --save
 npm install markdown-it-task-lists --save
 ```
 
+可以尝试一些[其他插件](https://github.com/TenviLi/awesome-hexo-plugins)。
+
 由于 KaTeX 功能不全，且新版 MathJax 做了效率优化，所以这里可以放心选 MathJax。
 
 至于缩写……可以配置 vscode snippets（有个插件 `math-snippets` ）辅助输入，或者在文件头部插入自己定义的宏。
@@ -95,6 +97,17 @@ markdown_it_plus:
 ```
 
 [测试链接](/2024/09/16/test)
+
+### 更改字体字体
+
+可以去 [](https://fonts.google.com) 上找字体。
+
+编辑 `_config.redefine.yml`，找到 `global > fonts > chinese`：
+```yml
+enable: true
+family: "Noto Serif SC" # Font family
+url: "https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&family=Noto+Serif+SC:wght@200..900&display=swap" # Font URL to CSS file
+```
 
 ### 部署到 github pages
 

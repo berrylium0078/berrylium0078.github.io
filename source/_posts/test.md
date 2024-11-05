@@ -241,6 +241,18 @@ ___
 
 `:tent: :) :(`
 
+### 代码高亮测试
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    for (int i = 1; i <= 10; i++)
+        cout << "Hello World!\n";
+}
+```
+
 ### 标题测试
 
 #### 四级标题

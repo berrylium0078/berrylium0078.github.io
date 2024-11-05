@@ -11,25 +11,24 @@
 # Docs: https://redefine-docs.ohevan.com/basic/info
 info:
   # Site title
-  title: Theme Redefine
+  title: Berrylium' blog
   # Site subtitle
-  subtitle: Redefine Your Hexo Journey.
+  subtitle: Berrylium Production Complex
   # Author name
-  author: The Redefine Team
+  author: Berrylium
   # Site URL
-  url: https://redefine.ohevan.com
+  url: https://berrylium0078.github.io
 # BASIC INFORMATION <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end
-
 
 # IMAGE CONFIGURATION >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> start
 # Docs: https://redefine-docs.ohevan.com/basic/defaults
 defaults:
   # Favicon
-  favicon: /images/redefine-favicon.svg
+  favicon: /images/avatar.png
   # Site logo
-  logo: 
+  logo: /images/avatar.png
   # Site avatar
-  avatar: /images/redefine-avatar.svg
+  avatar: /images/avatar.png
 # IMAGE CONFIGURATION <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end
 
 
@@ -52,9 +51,9 @@ global:
   fonts:
     # Chinese fonts
     chinese: 
-      enable: false # Whether to enable custom chinese fonts
-      family:  # Font family
-      url:  # Font URL to CSS file
+      enable: true # Whether to enable custom chinese fonts
+      family: "Noto Serif SC" # Font family
+      url: "https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&family=Noto+Serif+SC:wght@200..900&display=swap" # Font URL to CSS file
     # English fonts
     english: 
       enable: false # Whether to enable custom english fonts
@@ -301,8 +300,8 @@ articles:
       light: github # light mode theme, support: github, atom-one-light, default
       dark: vs2015 # dark mode theme, support: github-dark, monokai-sublime, vs2015, night-owl, atom-one-dark, nord, tokyo-night-dark, a11y-dark, agate
     font: # Custom font
-      enable: false # Whether to enable
-      family: # Font family
+      enable: true # Whether to enable
+      family: "Fira Code" # Font family
       url: # Font URL to CSS file
   # Table of contents settings
   toc:
