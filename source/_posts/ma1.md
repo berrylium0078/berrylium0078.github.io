@@ -1,10 +1,9 @@
 ---
 title: 实数完备性
-tags: 数分
-mathjax: 'on'
+tags: 数学分析,笔记
+mathjax: on
 date: 2024-09-14 14:51:43
 ---
-
 
 ### 1. Dedekind 分割
 
@@ -12,8 +11,7 @@ date: 2024-09-14 14:51:43
 
 定理：$A\cap B=\varnothing,A\cup B=\mathbb{R},\forall a\in A, b\in B,a<b$，则要么 $A$ 有最大值，要么 $B$ 有最小值
 
-证明：
-
+{% folding blue::证明 %}
 反证，令 $C=\bigcup_{a\in A}\{x<a|x\in \mathbb{Q}\},D=\bigcup_{b\in B}\{x>b|x\in \mathbb{Q}\}$，显然 $C<D$
 
 那么存在 $x\in \mathbb{R}$ 使得 $C<x<D$
@@ -21,6 +19,7 @@ date: 2024-09-14 14:51:43
 注意到 $\forall a\in A, \exists a'\in A,a'>a$，于是 $\exists c\in C\cap (a,a')$，那么 $x>c>a$
 
 另一边同理，得到 $A<x<B$，与 $A\cup B=\mathbb{R}$ 矛盾。
+{% endfolding %}
 
 ### 2. 确界存在定理
 
@@ -54,9 +53,9 @@ $(a,b)$ 不能为开区间，反例：$(a,b) = (0, 1),E_n=(1/n,1)$
 
 $E_\lambda$ 不能为闭区间，反例：$[a,b]=[-1,1],E_0=[-1,0],E_n=[2^{-n},2^{1-n}]$
 
-证明：
-
+{% folding blue::证明 %}
 反证，令 $m=(a+b)/2$，则 $[a,m]$ 和 $[m,b]$ 至少一个不能被有限覆盖。递归下去，得到 $\forall n\in \mathbb{N}^+$，$[a_n,b_n]$ 都不能被有限覆盖，由闭区间套定理知存在 $x\in\bigcap [a_n,b_n]$，$\exists x\in E_\lambda=(c,d)$，显然 $\exists n,b_n-a_n<\min\{x-c,d-x\},[a_n,b_n]\subset(c,d)$ 被有限覆盖，矛盾。
+{% endfolding %}
 
 ### 6. 聚点原理
 
@@ -75,6 +74,8 @@ $E_\lambda$ 不能为闭区间，反例：$[a,b]=[-1,1],E_0=[-1,0],E_n=[2^{-n},2
 证明：
 
 任找一个聚点 $x$，注意到 $U(x,2^{-n})$ 有无穷多个数列中的元素，故总能按顺序取出下一项。
+
+### 互推时间！
 
 #### 7 推 3
 

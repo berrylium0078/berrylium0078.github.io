@@ -258,3 +258,86 @@ int main() {
 #### 四级标题
 ##### 五级标题
 ###### 六级标题
+
+## redefine 写作模块测试
+
+搬运自 [官方文档](https://redefine-docs.ohevan.com/zh/modules)
+
+### 笔记
+
+{% notel [颜色] [可选: 自定义图标] [标题] %}
+内容
+支持换行
+{% endnotel %}
+
+{% notel default fa-info 信息 %}
+换行测试
+换行测试
+换行测试
+{% endnotel %}
+ 
+{% notel blue 提示 %}
+换行测试
+换行测试
+换行测试
+{% endnotel %}
+ 
+{% notel red 自定义标题 %}
+换行测试
+换行测试
+换行测试
+{% endnotel %}
+
+### 按钮
+
+Buttons with no arguments {% btn Button:: / %} fits well in the paragraph.
+ 
+regular button fits better when outside of the paragraph
+ 
+{% btn regular::Example::https://www.ohevan.com::fa-solid fa-play-circle %}
+ 
+{% btn regular::Example::https://www.ohevan.com::fa-solid fa-play-circle %}
+ 
+please use large with center:
+ 
+{% btn center large::Get started::https://redefine-docs.ohevan.com::fa-solid fa-download %}
+
+### 折叠
+
+{% folding blue::Folding 测试： 点击查看更多 %}
+ 
+啊啊啊啊啊
+ 
+{% note danger  %}
+danger 提示块标签
+{% endnote %}
+ 
+{% note tip  %}
+tip 提示块标签
+{% endnote %}
+ 
+{% endfolding %}
+
+可用颜色：`yellow, blue, green, red, orange, pink, cyan, white, black, gray`
+
+### 分栏
+
+{% tabs First unique name %}
+<!-- tab First Tab-->
+**This is Tab 1.**
+<!-- endtab -->
+ 
+<!-- tab Second Tab-->
+**This is Tab 2.**
+ 
+This is Tab 2.
+<!-- endtab -->
+ 
+<!-- tab Third Tab-->
+**This is Tab 3.**
+ 
+This is Tab 3.
+ 
+This is Tab 3.
+<!-- endtab -->
+{% endtabs %}

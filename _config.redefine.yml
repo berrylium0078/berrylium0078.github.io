@@ -55,7 +55,7 @@ global:
       family: "Noto Serif SC" # Font family
       url: "https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&family=Noto+Serif+SC:wght@200..900&display=swap" # Font URL to CSS file
     # English fonts
-    english: 
+    english:
       enable: false # Whether to enable custom english fonts
       family:  # Font family
       url:  # Font URL to CSS file
@@ -270,7 +270,7 @@ articles:
   style:
     font_size: 16px # Font size
     line_height: 1.5 # Line height
-    image_border_radius: 14px # image border radius
+    image_border_radius: 3px # image border radius
     image_alignment: center # image alignment. left, center
     image_caption: false # Whether to display image caption
     link_icon: true # Whether to display link icon
@@ -386,7 +386,7 @@ footer:
   # Icon in footer, write fontawesome icon code here
   icon: '<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>'
   # The start time of the website, format: YYYY/MM/DD HH:mm:ss
-  start: 2022/8/17 11:45:14
+  start: 2024/9/9 12:00:00
   # Site statistics
   statistics: true # show site statistics or not (total articles, total words)
   # Footer message
