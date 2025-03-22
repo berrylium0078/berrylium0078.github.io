@@ -18,13 +18,20 @@
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta property="og:type" content="website">
+    
+    
+        
+        <meta name="description" content="your_description">
+<meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
 <meta property="og:url" content="http://example.com/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="your_description">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/your_image_path">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/your_image_path">
     
     
     <!--- Icon Part-->
@@ -46,6 +53,16 @@
 
     <!--- Inject Part-->
     
+        
+            
+    
+            
+    
+            
+                
+                    <link rel="stylesheet" href="/css/heimu.css">
+                
+    
 
     
 <link rel="stylesheet" href="/css/style.css">
@@ -53,7 +70,7 @@
 
     
         
-<link rel="stylesheet" href="/assets/build/styles.css">
+<link rel="stylesheet" href="/css/build/tailwind.css">
 
     
 
@@ -72,12 +89,14 @@
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&family=Noto+Serif+SC:wght@200..900&display=swap" rel="stylesheet">
     
     
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,300..900;1,300..900" rel="stylesheet">
+    
     
     
 
     <script id="hexo-configurations">
     window.config = {"hostname":"example.com","root":"/","language":"en"};
-    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","highlight_theme":{"light":"github","dark":"vs2015"},"font":{"enable":true,"family":"Fira Code","url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"cc_by_nc_sa"},"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null,"default_mode":"light"},"global":{"fonts":{"chinese":{"enable":true,"family":"Noto Serif SC","url":"https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&family=Noto+Serif+SC:wght@200..900&display=swap"},"english":{"enable":false,"family":null,"url":null},"title":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":{"enable":false,"custom_message":null},"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title":"Theme Redefine","subtitle":{"text":[],"hitokoto":{"enable":false,"show_author":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"style":"default","links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.7.3","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"}},"search":{"enable":false,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":null},"article_date_format":"auto","excerpt_length":200,"categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2022/8/17 11:45:14"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"3px","image_alignment":"center","image_caption":false,"link_icon":true,"delete_mask":false,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","highlight_theme":{"light":"github","dark":"vs2015"},"font":{"enable":true,"family":"Fira Code","url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"cc_by_nc_sa"},"lazyload":true,"pangu_js":false,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null,"default_mode":"light"},"global":{"fonts":{"chinese":{"enable":true,"family":"Noto Sans SC","url":"https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&family=Noto+Serif+SC:wght@200..900&display=swap"},"english":{"enable":true,"family":"Noto Sans","url":"https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,300..900;1,300..900"},"title":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":{"enable":false,"custom_message":null},"open_graph":{"enable":true,"image":"your_image_path","description":"your_description"},"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title":"Theme Redefine","subtitle":{"text":[],"hitokoto":{"enable":false,"show_author":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"style":"default","links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.8.2","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"}},"search":{"enable":false,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":null},"article_date_format":"auto","excerpt_length":200,"categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2024/9/9 12:00:00"};
     window.lang_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
     window.data = {"masonry":false};
   </script>
@@ -102,24 +121,23 @@
 <meta name="generator" content="Hexo 7.3.0"></head>
 
 
+
 <body>
-<div class="progress-bar-container">
-    
+	<div class="progress-bar-container">
+	
 
-    
-        <span class="pjax-progress-bar"></span>
-<!--        <span class="swup-progress-icon">-->
-<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
-<!--        </span>-->
-    
+	
+	<span class="pjax-progress-bar"></span>
+	<!--        <span class="swup-progress-icon">-->
+	<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+	<!--        </span>-->
+	
 </div>
-
-
 
 <main class="page-container" id="swup">
 
-    
-        
+	
+	
     <style>
         .home-banner-container {
             background: none !important;
@@ -155,7 +173,7 @@
 
 <div class="home-banner-container flex justify-center items-center transition-fade relative">
     
-    <div class="content mt-8 flex flex-col justify-center items-center">
+    <div class="content mt-8 flex flex-col justify-center items-center transition-fade-down">
         <div class="description flex flex-col justify-center items-center w-screen font-medium text-center"
         
         >
@@ -175,13 +193,11 @@
         }
     </script>
 </div>
-    
+	
 
-    <div class="main-content-container flex flex-col justify-between min-h-dvh">
-
-
-        <div class="main-content-header">
-            <header class="navbar-container px-6 md:px-12">
+	<div class="main-content-container flex flex-col justify-between min-h-dvh">
+		<div class="main-content-header">
+			<header class="navbar-container px-6 md:px-12">
     <div class="navbar-content transition-navbar has-home-banner">
         <div class="left">
             
@@ -262,7 +278,7 @@
 
         <div class="statistics flex justify-around my-2.5">
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">4</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">3</div>
         <div class="label text-third-text-color text-sm">Tags</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
@@ -270,7 +286,7 @@
         <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">7</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">8</div>
         <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
@@ -281,12 +297,11 @@
 </header>
 
 
-        </div>
+		</div>
 
-        <div class="main-content-body">
-
-            
-                <div class="home-sidebar-container">
+		<div class="main-content-body transition-fade-up">
+			
+			<div class="home-sidebar-container">
     <div class="sticky-container sticky">
         
         
@@ -298,12 +313,12 @@
                 <div class="author flex flex-col justify-center my-2.5 mx-0">
     <div class="name">Berrylium</div>
     
-        <div class="label">Lv1</div>
+        <div class="label">Lv2</div>
     
 </div>
                 <div class="statistics flex justify-around my-2.5">
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">4</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">3</div>
         <div class="label text-third-text-color text-sm">Tags</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
@@ -311,7 +326,7 @@
         <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">7</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">8</div>
         <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
@@ -321,13 +336,123 @@
     </div>
 </div>
 
-            
+			
 
-            <div class="main-content">
+			<div class="main-content">
+				<div class="home-content-container">
+    <ul class="home-article-list">
+        
+            <li class="home-article-item">
 
                 
-                    <div class="home-content-container">
-    <ul class="home-article-list">
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/2025/02/11/rtxactivate/">
+                            rtx启动！
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            
+                             前言
+记录了给 archlinux 安装 nvidia 显卡驱动的过程，使用借来的 RTX4090 测试。
+电脑配置是 Thinkbook 14+ G6 IMH，TGX 接口外接联想官方的显卡扩展坞。
+ 安装驱动
+跟着教程做的，执行完前两步后重启试了一下没读教程开头警告，好孩子不要学发现 SD webui 已经能用了。
+p.s. 我怀疑第三步是使用显卡的图形功能用的，AI 计算并不需要。开...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Tue Feb 11 2025 20:50:43 GMT+0800">
+                
+                    2025-02-11
+                
+            </span>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/archlinux/">archlinux</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2025/02/11/rtxactivate/">Read more<span class="seo-reader-text">rtx启动！</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/2025/02/11/efifull/">
+                            EFI 分区满了
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            
+                             事故描述
+EFI 分区被塞爆了！！！
+因为预留 EFI 分区时，笔者看了一下上一台电脑的 /boot 占用约 180M，俺寻思 260M 绝对够用了，然后用了半年。
+昨天在装 nvidia 驱动时炸了，mkinitcpio 报错剩余空间不足。重启后不能开机，表现为 grub 还活着，但是启动时报错 Initramfs unpacking failed: ZSTD-compressed da...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Tue Feb 11 2025 20:29:05 GMT+0800">
+                
+                    2025-02-11
+                
+            </span>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/archlinux/">archlinux</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2025/02/11/efifull/">Read more<span class="seo-reader-text">EFI 分区满了</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
         
             <li class="home-article-item">
 
@@ -346,12 +471,14 @@
                     <div class="home-article-content markdown-body">
                         
                             
-                             数学公式测试
-\KaTeXLATEXTEX
- 自定义宏
-
-H2O,H2O,limn→∞
-12$\newcommand&#123;\water&#125;&#123;H_2O&#125; \def\wate&#123;H_2O&#125;\def\liminfty#1&#123;\lim_&#123; #1\to\infty&#125;&#125;$$\water,\wate,\liminf...
+                            想获得同款博客？戳我
+ 自定义 CSS 测试
+看到我的是猪
+1&lt;span title=&quot;开玩笑的😜&quot; class=&quot;heimu&quot;&gt;看到我的是猪&lt;/span&gt;
+emmm…但是因为隐藏文字是通过修改前景色实现的，不能包含 emoji。
+CSS 代码来自萌娘百科。
+ 字体测试
+关复门liLI1|oO0() 关复门liLI1|oO0(...
                         
                     </div>
 
@@ -391,7 +518,8 @@ H2O,H2O,limn→∞
                     <div class="home-article-content markdown-body">
                         
                             
-                            Welcome to Hexo ! This is your very first post. Check documentation  for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting  or you can ask me on GitHub ...
+                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+ Q...
                         
                     </div>
 
@@ -482,7 +610,7 @@ H2O,H2O,limn→∞
                 <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
                     <h3 class="home-article-title">
                         <a href="/2024/11/02/arch-install/">
-                            archlinux 安装记录
+                            Arch Linux 安装记录
                         </a>
                     </h3>
 
@@ -490,16 +618,14 @@ H2O,H2O,limn→∞
                         
                             
                              前言
-记录一下日用 archlinux 系统的安装过程。使用 KDE Plasma 桌面环境。
-以下是笔者的电脑配置：
-型号：ThinkBook 14 G6+ IMH
-CPU：Intel® Core™ Ultra 5 125H
-核显：Mesa Intel® Arc
-RAM：32GB
- 基础安装
-先装一个能启动的 linux。
- 制作并启动安装介质
-由于笔者已有安装 archlinux 的硬...
+记录日用系统的安装流程，以备不时之需。
+但搬 wiki 没什么意思，所以我决定重点记录我个人的一些选择与理由，作为对 wiki 的补充。
+执行每一步操作前，请务必确认你知道自己在做什么。本文不做任何担保。
+It works on my machine
+It worked last year
+电脑配置 
+              
+              型号：ThinkBook...
                         
                     </div>
 
@@ -528,7 +654,7 @@ RAM：32GB
         
     </div>
 
-    <a href="/2024/11/02/arch-install/">Read more<span class="seo-reader-text">archlinux 安装记录</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/2024/11/02/arch-install/">Read more<span class="seo-reader-text">Arch Linux 安装记录</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
                 </div>
@@ -544,20 +670,21 @@ RAM：32GB
                 <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
                     <h3 class="home-article-title">
                         <a href="/2024/10/31/arch-btrfs/">
-                            btrfs 踩坑记
+                            BTRFS 入坑记
                         </a>
                     </h3>
 
                     <div class="home-article-content markdown-body">
                         
                             
-                             前言
-btrfs 是一个支持写时复制、快照、分卷、透明压缩的文件系统。
- 开整！
-全过程见archlinux 安装记录 
-本文仅记录不同部分。
- 硬盘分区并挂载
-123456789101112131415161718mkfs.btrfs -L 分区名 /dev/nvme0n1p2mount -t btrfs /dev/nvme0n1p2 /mntbtrfs subvolume create...
+                            被学长传教了……
+ 关于 BTRFS
+B-Tree Butter Bug File System 是一个支持写时复制(CoW)、子卷快照、数据校验、透明压缩等多种高级功能的现代文件系统。
+
+写时复制（Copy on Write, CoW）
+
+修改不是原地覆盖，而是先写入到空白区域，再修改指针，可保证数据一致性。
+支持快速复制（reflink），因为 CoW 机制所以后续只需要存储对副本的改动...
                         
                     </div>
 
@@ -586,65 +713,7 @@ btrfs 是一个支持写时复制、快照、分卷、透明压缩的文件系�
         
     </div>
 
-    <a href="/2024/10/31/arch-btrfs/">Read more<span class="seo-reader-text">btrfs 踩坑记</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
-</div>
-
-                </div>
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                
-
-                
-                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
-                    <h3 class="home-article-title">
-                        <a href="/2024/09/14/ma1/">
-                            实数完备性
-                        </a>
-                    </h3>
-
-                    <div class="home-article-content markdown-body">
-                        
-                            
-                             1. Dedekind 分割
-以有理数的分划定义实数。
-定理：A∩B=∅,A∪B=R,∀a∈A,b∈B,a&lt;b，则要么 A 有最大值，要么 B 有最小值
-证明：
-反证，令 C=⋃a∈A{x&lt;a|x∈Q},D=⋃b∈B{x&gt;b|x∈Q}，显然 C&lt;D
-那么存在 x∈R 使得 C&lt;x&lt;D
-注意到 ∀a∈A,∃a′∈A,a′&gt;a，于是 ∃c∈C∩(a,a...
-                        
-                    </div>
-
-                    <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Sat Sep 14 2024 14:51:43 GMT+0800">
-                
-                    2024-09-14
-                
-            </span>
-        </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fa-solid fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/%E6%95%B0%E5%88%86/">数分</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/2024/09/14/ma1/">Read more<span class="seo-reader-text">实数完备性</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/2024/10/31/arch-btrfs/">Read more<span class="seo-reader-text">BTRFS 入坑记</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
                 </div>
@@ -660,7 +729,7 @@ btrfs 是一个支持写时复制、快照、分卷、透明压缩的文件系�
                 <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
                     <h3 class="home-article-title">
                         <a href="/2024/09/05/build-site/">
-                            建站踩坑记
+                            建站记录
                         </a>
                     </h3>
 
@@ -668,12 +737,14 @@ btrfs 是一个支持写时复制、快照、分卷、透明压缩的文件系�
                         
                             
                              前言
-选择 redefine 主题是因为看到学弟 在用，于是跟风。
+选择 redefine 主题是因为看到学弟在用，于是跟风。
 用起来感觉确实不错，加载很快，页面美观，功能虽然不是最全的但也够用，然而对数学公式和表情包的支持不好……
 加了别的插件解决了问题，所以记录一下搭建过程。
-p.s. 学弟不知为何删库跑路了，截至 2024/11/02 仍未回归。
+功能测试戳我
  安装软件包
-12sudo pacman -S nodejs npmnpm install he...
+12sudo pacman -S nodejs npmnpm install hexo-cli -g
+ 安装 redefine 主题
+参(ban...
                         
                     </div>
 
@@ -702,7 +773,7 @@ p.s. 学弟不知为何删库跑路了，截至 2024/11/02 仍未回归。
         
     </div>
 
-    <a href="/2024/09/05/build-site/">Read more<span class="seo-reader-text">建站踩坑记</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/2024/09/05/build-site/">Read more<span class="seo-reader-text">建站记录</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
                 </div>
@@ -712,37 +783,33 @@ p.s. 学弟不知为何删库跑路了，截至 2024/11/02 仍未回归。
 
     <div class="home-paginator px-7 py-5">
         <div class="paginator">
-    <span class="page-number current">1</span>
+	<span class="page-number current">1</span>
 </div>
-
+  
     </div>
 </div>
 
-                    <div class="comment-container pjax"></div>
-                
+			</div>
 
-            </div>
+			
+		</div>
 
-            
-
-        </div>
-
-        <div class="main-content-footer">
-            <footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+		<div class="main-content-footer">
+			<footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
     <div class="info-container py-3 text-center">
         
         <div class="text-center">
             &copy;
             
-              <span>2022</span>
+              <span>2024</span>
               -
             
-            2024&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">Berrylium</a>
+            2025&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">Berrylium</a>
             
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        7 posts in total
+                        8 posts in total
                     </span>
                     
                 </p>
@@ -767,7 +834,7 @@ p.s. 学弟不知为何删库跑路了，截至 2024/11/02 仍未回归。
         
         <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
             <span class="lg:block text-sm">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a></span>
-            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.7.3</a></span>
+            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.8.2</a></span>
         </div>
         
         
@@ -793,77 +860,80 @@ p.s. 学弟不知为何删库跑路了，截至 2024/11/02 仍未回归。
             </script>
         
         
+            
+                
+        
+                
+        
         
     </div>  
 </footer>
-        </div>
-    </div>
+		</div>
+	</div>
 
-    
+	
 
-    <div class="right-side-tools-container">
-        <div class="side-tools-container">
-    <ul class="hidden-tools-list">
-        <li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
-            <i class="fa-regular fa-magnifying-glass-plus"></i>
-        </li>
+	<div class="right-side-tools-container">
+		<div class="side-tools-container">
+	<ul class="hidden-tools-list">
+		<li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-plus"></i>
+		</li>
 
-        <li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
-            <i class="fa-regular fa-magnifying-glass-minus"></i>
-        </li>
+		<li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-minus"></i>
+		</li>
 
-        <li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
-            <i class="fa-regular fa-moon"></i>
-        </li>
+		<li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+			<i class="fa-regular fa-moon"></i>
+		</li>
 
-        <!-- rss -->
-        
+		<!-- rss -->
+		
 
-        
+		
 
-        <li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
-            <i class="fa-regular fa-arrow-down"></i>
-        </li>
-    </ul>
+		<li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+			<i class="fa-regular fa-arrow-down"></i>
+		</li>
+	</ul>
 
-    <ul class="visible-tools-list">
-        <li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
-            <i class="fa-regular fa-cog fa-spin"></i>
-        </li>
-        
-            <li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
-                <i class="arrow-up fas fa-arrow-up"></i>
-                <span class="percent"></span>
-            </li>
-        
-        
-    </ul>
+	<ul class="visible-tools-list">
+		<li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+			<i class="fa-regular fa-cog fa-spin"></i>
+		</li>
+		
+		<li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+			<i class="arrow-up fas fa-arrow-up"></i>
+			<span class="percent"></span>
+		</li>
+		
+		
+	</ul>
+</div>
+	</div>
+
+	<div class="image-viewer-container">
+	<img src="">
 </div>
 
-    </div>
-
-    <div class="image-viewer-container">
-    <img src="">
-</div>
-
-
-    
+	
 
 </main>
 
 
-    
-<script src="/js/libs/Swup.min.js"></script>
 
-<script src="/js/libs/SwupSlideTheme.min.js"></script>
+<script src="/js/build/libs/Swup.min.js"></script>
 
-<script src="/js/libs/SwupScriptsPlugin.min.js"></script>
+<script src="/js/build/libs/SwupSlideTheme.min.js"></script>
 
-<script src="/js/libs/SwupProgressPlugin.min.js"></script>
+<script src="/js/build/libs/SwupScriptsPlugin.min.js"></script>
 
-<script src="/js/libs/SwupScrollPlugin.min.js"></script>
+<script src="/js/build/libs/SwupProgressPlugin.min.js"></script>
 
-<script src="/js/libs/SwupPreloadPlugin.min.js"></script>
+<script src="/js/build/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupPreloadPlugin.min.js"></script>
 
 <script>
     const swup = new Swup({
@@ -887,45 +957,42 @@ p.s. 学弟不知为何删库跑路了，截至 2024/11/02 仍未回归。
 
 
 
+	
+<script src="/js/build/tools/imageViewer.js" type="module"></script>
 
+<script src="/js/build/utils.js" type="module"></script>
 
+<script src="/js/build/main.js" type="module"></script>
 
+<script src="/js/build/layouts/navbarShrink.js" type="module"></script>
 
-<script src="/js/tools/imageViewer.js" type="module"></script>
+<script src="/js/build/tools/scrollTopBottom.js" type="module"></script>
 
-<script src="/js/utils.js" type="module"></script>
+<script src="/js/build/tools/lightDarkSwitch.js" type="module"></script>
 
-<script src="/js/main.js" type="module"></script>
-
-<script src="/js/layouts/navbarShrink.js" type="module"></script>
-
-<script src="/js/tools/scrollTopBottom.js" type="module"></script>
-
-<script src="/js/tools/lightDarkSwitch.js" type="module"></script>
-
-<script src="/js/layouts/categoryList.js" type="module"></script>
+<script src="/js/build/layouts/categoryList.js" type="module"></script>
 
 
 
 
 
     
-<script src="/js/tools/codeBlock.js" type="module"></script>
+<script src="/js/build/tools/codeBlock.js" type="module"></script>
 
 
 
 
     
-<script src="/js/layouts/lazyload.js" type="module"></script>
+<script src="/js/build/layouts/lazyload.js" type="module"></script>
 
 
 
 
     
-<script src="/js/tools/runtime.js"></script>
+<script src="/js/build/tools/runtime.js"></script>
 
     
-<script src="/js/libs/odometer.min.js"></script>
+<script src="/js/build/libs/odometer.min.js"></script>
 
     
 <link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
@@ -934,10 +1001,10 @@ p.s. 学弟不知为何删库跑路了，截至 2024/11/02 仍未回归。
 
 
   
-<script src="/js/libs/Typed.min.js"></script>
+<script src="/js/build/libs/Typed.min.js"></script>
 
   
-<script src="/js/plugins/typed.js" type="module"></script>
+<script src="/js/build/plugins/typed.js" type="module"></script>
 
 
 
@@ -947,29 +1014,32 @@ p.s. 学弟不知为何删库跑路了，截至 2024/11/02 仍未回归。
 
 
     
-<script src="/js/libs/anime.min.js"></script>
+<script src="/js/build/libs/anime.min.js"></script>
 
 
 
 
 
     
-<script src="/js/tools/tocToggle.js" type="module" data-swup-reload-script=""></script>
+<script src="/js/build/tools/tocToggle.js" type="module" data-swup-reload-script=""></script>
 
-<script src="/js/layouts/toc.js" type="module" data-swup-reload-script=""></script>
+<script src="/js/build/layouts/toc.js" type="module" data-swup-reload-script=""></script>
 
-<script src="/js/plugins/tabs.js" type="module" data-swup-reload-script=""></script>
-
-
-
-
-<script src="/js/libs/moment-with-locales.min.js" data-swup-reload-script=""></script>
-
-
-<script src="/js/layouts/essays.js" type="module" data-swup-reload-script=""></script>
+<script src="/js/build/plugins/tabs.js" type="module" data-swup-reload-script=""></script>
 
 
 
 
+<script src="/js/build/libs/moment-with-locales.min.js" data-swup-reload-script=""></script>
+
+
+<script src="/js/build/layouts/essays.js" type="module" data-swup-reload-script=""></script>
+
+
+
+
+
+	
 </body>
+
 </html>

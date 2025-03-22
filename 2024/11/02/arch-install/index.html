@@ -18,20 +18,23 @@
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="前言 记录一下日用 archlinux 系统的安装过程。使用 KDE Plasma 桌面环境。 以下是笔者的电脑配置： 型号：ThinkBook 14 G6+ IMH CPU：Intel® Core™ Ultra 5 125H 核显：Mesa Intel® Arc RAM：32GB  基础安装 先装一个能启动的 linux。  制作并启动安装介质 由于笔者已有安装 archlinux 的硬盘，所">
+    
+    
+        
+        <meta name="description" content="your_description">
 <meta property="og:type" content="article">
-<meta property="og:title" content="archlinux 安装记录">
+<meta property="og:title" content="Arch Linux 安装记录">
 <meta property="og:url" content="http://example.com/2024/11/02/arch-install/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="前言 记录一下日用 archlinux 系统的安装过程。使用 KDE Plasma 桌面环境。 以下是笔者的电脑配置： 型号：ThinkBook 14 G6+ IMH CPU：Intel® Core™ Ultra 5 125H 核显：Mesa Intel® Arc RAM：32GB  基础安装 先装一个能启动的 linux。  制作并启动安装介质 由于笔者已有安装 archlinux 的硬盘，所">
+<meta property="og:description" content="your_description">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/images/00/ill-chars.png">
+<meta property="og:image" content="http://example.com/2024/11/02/arch-install/your_image_path">
 <meta property="article:published_time" content="2024-11-02T02:05:24.000Z">
-<meta property="article:modified_time" content="2024-11-05T02:53:22.670Z">
+<meta property="article:modified_time" content="2025-03-22T12:21:15.905Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="archlinux">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/images/00/ill-chars.png">
+<meta name="twitter:image" content="http://example.com/2024/11/02/arch-install/your_image_path">
     
     
     <!--- Icon Part-->
@@ -43,7 +46,7 @@
     
     <title>
         
-            archlinux 安装记录 | Berrylium&#39; blog
+            Arch Linux 安装记录 | Berrylium&#39; blog
         
     </title>
 
@@ -53,6 +56,16 @@
 
     <!--- Inject Part-->
     
+        
+            
+    
+            
+    
+            
+                
+                    <link rel="stylesheet" href="/css/heimu.css">
+                
+    
 
     
 <link rel="stylesheet" href="/css/style.css">
@@ -60,7 +73,7 @@
 
     
         
-<link rel="stylesheet" href="/assets/build/styles.css">
+<link rel="stylesheet" href="/css/build/tailwind.css">
 
     
 
@@ -79,12 +92,14 @@
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&family=Noto+Serif+SC:wght@200..900&display=swap" rel="stylesheet">
     
     
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,300..900;1,300..900" rel="stylesheet">
+    
     
     
 
     <script id="hexo-configurations">
     window.config = {"hostname":"example.com","root":"/","language":"en"};
-    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","highlight_theme":{"light":"github","dark":"vs2015"},"font":{"enable":true,"family":"Fira Code","url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"cc_by_nc_sa"},"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null,"default_mode":"light"},"global":{"fonts":{"chinese":{"enable":true,"family":"Noto Serif SC","url":"https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&family=Noto+Serif+SC:wght@200..900&display=swap"},"english":{"enable":false,"family":null,"url":null},"title":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":{"enable":false,"custom_message":null},"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title":"Theme Redefine","subtitle":{"text":[],"hitokoto":{"enable":false,"show_author":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"style":"default","links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.7.3","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"}},"search":{"enable":false,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":null},"article_date_format":"auto","excerpt_length":200,"categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2022/8/17 11:45:14"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"3px","image_alignment":"center","image_caption":false,"link_icon":true,"delete_mask":false,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","highlight_theme":{"light":"github","dark":"vs2015"},"font":{"enable":true,"family":"Fira Code","url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"cc_by_nc_sa"},"lazyload":true,"pangu_js":false,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null,"default_mode":"light"},"global":{"fonts":{"chinese":{"enable":true,"family":"Noto Sans SC","url":"https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&family=Noto+Serif+SC:wght@200..900&display=swap"},"english":{"enable":true,"family":"Noto Sans","url":"https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,300..900;1,300..900"},"title":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":{"enable":false,"custom_message":null},"open_graph":{"enable":true,"image":"your_image_path","description":"your_description"},"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title":"Theme Redefine","subtitle":{"text":[],"hitokoto":{"enable":false,"show_author":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"style":"default","links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.8.2","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"}},"search":{"enable":false,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":null},"article_date_format":"auto","excerpt_length":200,"categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2024/9/9 12:00:00"};
     window.lang_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
     window.data = {"masonry":false};
   </script>
@@ -109,29 +124,26 @@
 <meta name="generator" content="Hexo 7.3.0"></head>
 
 
+
 <body>
-<div class="progress-bar-container">
-    
+	<div class="progress-bar-container">
+	
 
-    
-        <span class="pjax-progress-bar"></span>
-<!--        <span class="swup-progress-icon">-->
-<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
-<!--        </span>-->
-    
+	
+	<span class="pjax-progress-bar"></span>
+	<!--        <span class="swup-progress-icon">-->
+	<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+	<!--        </span>-->
+	
 </div>
-
-
 
 <main class="page-container" id="swup">
 
-    
+	
 
-    <div class="main-content-container flex flex-col justify-between min-h-dvh">
-
-
-        <div class="main-content-header">
-            <header class="navbar-container px-6 md:px-12">
+	<div class="main-content-container flex flex-col justify-between min-h-dvh">
+		<div class="main-content-header">
+			<header class="navbar-container px-6 md:px-12">
     <div class="navbar-content transition-navbar ">
         <div class="left">
             
@@ -212,7 +224,7 @@
 
         <div class="statistics flex justify-around my-2.5">
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">4</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">3</div>
         <div class="label text-third-text-color text-sm">Tags</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
@@ -220,7 +232,7 @@
         <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">7</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">8</div>
         <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
@@ -231,40 +243,37 @@
 </header>
 
 
-        </div>
+		</div>
 
-        <div class="main-content-body">
+		<div class="main-content-body transition-fade-up">
+			
 
-            
+			<div class="main-content">
+				<div class="post-page-container flex relative justify-between box-border w-full h-full">
+	<div class="article-content-container">
 
-            <div class="main-content">
+		<div class="article-title relative w-full">
+			
+			<div class="w-full flex items-center pt-6 justify-start">
+				<h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">Arch Linux 安装记录</h1>
+			</div>
+			
+		</div>
 
-                
-                    <div class="post-page-container flex relative justify-between box-border w-full h-full">
-    <div class="article-content-container">
-
-        <div class="article-title relative w-full">
-            
-                <div class="w-full flex items-center pt-6 justify-start">
-                    <h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">archlinux 安装记录</h1>
-                </div>
-            
-            </div>
-
-        
-            <div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
-                <div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
-                    <img src="/images/avatar.png">
-                </div>
-                <div class="info flex flex-col justify-between">
-                    <div class="author flex items-center">
-                        <span class="name text-default-text-color text-lg font-semibold">Berrylium</span>
-                        
-                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv1</span>
-                        
-                    </div>
-                    <div class="meta-info">
-                        <div class="article-meta-info">
+		
+		<div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+			<div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+				<img src="/images/avatar.png">
+			</div>
+			<div class="info flex flex-col justify-between">
+				<div class="author flex items-center">
+					<span class="name text-default-text-color text-lg font-semibold">Berrylium</span>
+					
+					<span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv2</span>
+					
+				</div>
+				<div class="meta-info">
+					<div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
         <span class="desktop">2024-11-02 10:05:24</span>
@@ -274,8 +283,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-11-05 10:53:22</span>
-            <span class="mobile">2024-11-05 10:53:22</span>
+            <span class="desktop">2025-03-22 20:21:15</span>
+            <span class="mobile">2025-03-22 20:21:15</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -304,156 +313,166 @@
     
 </div>
 
-                    </div>
-                </div>
-            </div>
-        
+				</div>
+			</div>
+		</div>
+		
 
-        
+		
 
 
-        <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-            <h2 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h2>
-<p>记录一下日用 archlinux 系统的安装过程。使用 KDE Plasma 桌面环境。</p>
-<p>以下是笔者的电脑配置：<br />
-型号：ThinkBook 14 G6+ IMH<br />
-CPU：Intel® Core™ Ultra 5 125H<br />
-核显：Mesa Intel® Arc<br />
-RAM：32GB</p>
-<h2 id="基础安装"><a class="markdownIt-Anchor" href="#基础安装"></a> 基础安装</h2>
-<p>先装一个能启动的 linux。</p>
-<h3 id="制作并启动安装介质"><a class="markdownIt-Anchor" href="#制作并启动安装介质"></a> 制作并启动安装介质</h3>
-<p>由于笔者已有安装 archlinux 的硬盘，所以这一步就跳过了。</p>
-<p>没有怎么办？</p>
-<p>先推荐一款启动盘制作工具：<a class="link"   target="_blank" rel="noopener" href="https://www.ventoy.net/cn/index.html" >Ventoy <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>，只要把下好的 iso 文件复制到 U 盘里就可以用了！非常方便！</p>
-<p>然后执行 <a class="link"   target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/Installation_guide" >Installation guide - ArchWiki <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> 1.1 ~ 1.8。</p>
-<h3 id="硬盘分区并挂载"><a class="markdownIt-Anchor" href="#硬盘分区并挂载"></a> 硬盘分区并挂载</h3>
-<p 1,2,6="">前置知识：<a class="link"   target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/Device_file#Block_device_names" >Device file - ArchWiki <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> 中的 1.1.</p>
-<p><s>其实可以自己找规律，不看问题也不大</s></p>
-<p>终端分区工具推荐 cfdisk。确认写入之前请认真检查。</p>
-<h4 id="efi-分区"><a class="markdownIt-Anchor" href="#efi-分区"></a> EFI 分区</h4>
-<p>可以用现成的，可以按需扩容，作为参考我 archlinux 占用 188.2MB，官方推荐 1GB。</p>
-<p>如果新建的话分区类型选 1 号 EFI System，然后 <code>mkfs.fat -F 32 /dev/efi分区</code>。</p>
-<h4 id="swap-分区"><a class="markdownIt-Anchor" href="#swap-分区"></a> swap 分区</h4>
+		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+			<h2 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h2>
+<p>记录日用系统的安装流程，以备不时之需。</p>
+<p>但搬 wiki 没什么意思，所以我决定重点记录我个人的一些选择与理由，作为对 wiki 的补充。</p>
+<p>执行每一步操作前，请务必<mark>确认你知道自己在做什么</mark>。本文不做任何担保。<br />
+<span title="你知道的太多了" class="heimu">It works on my machine</span><br />
+<span title="你知道的太多了" class="heimu">It worked last year</span></p>
+<details class="blue" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>电脑配置 </summary>
+              <div class='content'>
+              <p>型号：ThinkBook 14 G6+ IMH<br />CPU：Intel® Core™ Ultra 5 125H<br />GPU：Mesa Intel® Arc（核显）<br />RAM：32GB<br />SSD：1TB</p>
+              </div>
+            </details>
+<h2 id="part-i基础安装"><a class="markdownIt-Anchor" href="#part-i基础安装"></a> Part I.<a class="link"   target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97" >基础安装<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></h2>
+<p>按照惯例，新手要在终端手敲命令完成安装！</p>
+<p><span title="你知道的太多了" class="heimu">逃课方法1：<a class="link"   target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/Archinstall" >Archinstall<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></span></p>
+<p><span title="你知道的太多了" class="heimu">逃课方法2：<a class="link"   target="_blank" rel="noopener" href="https://sourceforge.net/projects/arch-linux-gui/files/" >Arch Linux GUI<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></span></p>
+<h3 id="11-14-准备安装介质"><a class="markdownIt-Anchor" href="#11-14-准备安装介质"></a> 1.1-1.4 准备安装介质</h3>
+<p>在<a class="link"   target="_blank" rel="noopener" href="https://archlinux.org/download/" >下载页面<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a>下载 ISO 文件，并使用 <a class="link"   target="_blank" rel="noopener" href="https://www.ventoy.net/cn/index.html" >Ventoy<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a> 制作启动盘。</p>
+<p>开机按 F1 进入 live 环境，其他电脑型号请自行百度「U盘启动 + 厂商/型号」获得相关教程。</p>
+<h3 id="17-联网"><a class="markdownIt-Anchor" href="#17-联网"></a> 1.7 联网</h3>
+<p>其他可选方案：</p>
+<ul>
+<li>通过数据线连接手机，在手机里开启 USB 网络共享。</li>
+<li>连手机热点。</li>
+</ul>
+<h3 id="19-111-分区"><a class="markdownIt-Anchor" href="#19-111-分区"></a> 1.9-1.11 分区</h3>
+<h4 id="设计分区方案"><a class="markdownIt-Anchor" href="#设计分区方案"></a> 设计分区方案</h4>
+<p>先选择一款文件系统，笔者使用过 <a class="link"   target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/Ext4" >ext4<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a> 和 <a class="link"   target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/Btrfs" >btrfs<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a>。</p>
+<ul>
+<li>ext4 更加稳定，读写速度更快。</li>
+<li>btrfs 支持快照和数据校验等多种高级功能，并且 CoW 机制能保证数据一致性。</li>
+<li><span title="你知道的太多了" class="heimu">一部分人认为 btrfs 容易坏，但<a class="link"   target="_blank" rel="noopener" href="https://btrfs.readthedocs.io/en/latest/Hardware.html#hardware-as-the-main-source-of-filesystem-corruptions" >官方<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a>认为大概率是硬件的问题</span></li>
+</ul>
+<details class="blue" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>关于分区的一些个人建议 </summary>
+              <div class='content'>
+              <ol><li>将 EFI 分区挂载于 <code>/efi</code>（前提是电脑为 UEFI 引导！）<ul><li>可以减少 EFI 分区的空间占用。</li><li>本人教训：260M 的 EFI 分区，装完 nvidia 驱动占用 370MB💥</li><li>注意引导程序应能够访问 <code>/boot</code> 目录，已知 GRUB 支持 ext4 和 btrfs。</li></ul></li><li>使用交换文件取代交换分区<ul><li>二者在功能和性能上没有区别，前者的优点是可以灵活调整。</li></ul></li><li>可将特定目录单独分区，例如 <code>/home</code>（用户的各种文件）和 <code>/opt</code>（独立软件，感觉类似 AppImage）。<ul><li>可防止回滚/重装系统时误删文件。</li><li>清除旧系统时可以直接格式化根分区。</li></ul></li><li>一些不需要分区的目录：</li><li><code>/var</code><br />- 现代文件系统不会因为存储大量小文件而影响性能。<br />- 主要空间占用来自软件包缓存和系统日志，定期清理即可。</li><li><code>/usr</code><br />- <a class="link"   target="_blank" rel="noopener" href="https://systemd.io/SEPARATE_USR_IS_BROKEN/" >见<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></li><li><code>/tmp</code><br />- 默认使用 <code>tmpfs</code> 挂载，因此该分区实际位于内存或交换空间，无需担心性能问题。<br />- 若默认一半物理内存的容量不足，可以临时 <code>sudo mount -o remount,size=64G /tmp</code> 或者在 <code>fstab</code> 里添加挂载选项 <code>size=...G</code> 手动设置大小。</li></ol>
+              </div>
+            </details>
+<p>这次我试用了 btrfs，过程见我的<a href="/2024/10/31/arch-btrfs/"><em>这篇博文</em></a></p>
+<h3 id="21-选择镜像站"><a class="markdownIt-Anchor" href="#21-选择镜像站"></a> 2.1 选择镜像站</h3>
+<p><span title="你知道的太多了" class="heimu">我觉得 wiki 废话有点多</span></p>
+<p>下载中国镜像站列表并编辑，取消注释其中要使用的镜像站。</p>
+<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -L <span class="string">&#x27;https://archlinux.org/mirrorlist/?country=CN&amp;protocol=https&#x27;</span> -o /etc/pacman.d/mirrorlist</span><br><span class="line">nano /etc/pacman.d/mirrorlist</span><br></pre></td></tr></table></figure></div>
+<h3 id="23-安装必需的软件包"><a class="markdownIt-Anchor" href="#23-安装必需的软件包"></a> 2.3 安装必需的软件包</h3>
+<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacstrap -K /mnt base base-devel linux linux-firmware btrfs-progs nano networkmanager wpa_supplicant iwd intel-ucode</span><br></pre></td></tr></table></figure></div>
+<ul>
+<li><code>networkmanager</code>, <code>wpa_supplicant</code>, <code>iwd</code>：联网用的。</li>
+<li><code>btrfs-progs</code>：管理 <code>btrfs</code> 文件系统需要的工具。</li>
+<li><code>base-devel</code>：包含构建软件包的工具，AUR 上的包默认已经安装 <code>base-devel</code>。</li>
+</ul>
+<h3 id="34-区域和本地化设置"><a class="markdownIt-Anchor" href="#34-区域和本地化设置"></a> 3.4 区域和本地化设置</h3>
+<p>为避免麻烦，先用英文，装完桌面再改成中文。（你也不想在终端里前往桌面要狂按 tab 或切输入法吧？）</p>
+<p>编辑 <code>/etc/locale.gen</code>，取消注释 <code>en_US.UTF-8 UTF-8</code> 和 <code>zh_CN.UTF-8 UTF-8</code> 两行。</p>
+<p>之后运行</p>
+<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">locale-gen</span><br></pre></td></tr></table></figure></div>
+<p>再编辑 <code>/etc/locale.conf</code>：</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LANG=en_US.UTF-8</span><br></pre></td></tr></table></figure></div>
+<h3 id="38-安装引导程序"><a class="markdownIt-Anchor" href="#38-安装引导程序"></a> 3.8 安装引导程序</h3>
+<p><a class="link"   target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/GRUB" >GRUB<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a> 可自定义主题，暂时不想尝试 Systemd Boot。</p>
+<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pacman -S efibootmgr grub</span><br><span class="line">grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB</span><br><span class="line">grub-mkconfig -o /boot/grub/grub.cfg</span><br></pre></td></tr></table></figure></div>
+<h2 id="part-ii-安装桌面"><a class="markdownIt-Anchor" href="#part-ii-安装桌面"></a> Part II. 安装桌面</h2>
+<h3 id="安装-plasma-并启用服务"><a class="markdownIt-Anchor" href="#安装-plasma-并启用服务"></a> 安装 plasma 并启用服务</h3>
 
-  <div class="note p-4 mb-4 rounded-small red icon-padding">
-    <i class="note-icon fa-solid fa-warning"></i><p>极端言论警告</p>
+  <div class="note p-4 mb-4 rounded-small green icon-padding">
+    <i class="note-icon fa-solid fa-lightbulb"></i><p>花括号是 shell 的语法糖，如 <code>a{b,c}d</code> 表示 <code>abd acd</code>。</p>
 
   </div>
-<p>swap 分区根本没必要建。</p>
-<p>真需要用到的时候电脑也卡得没法用了。</p>
-<p>你说休眠(hibernate)怎么办？不如关机。</p>
-<h4 id="系统分区"><a class="markdownIt-Anchor" href="#系统分区"></a> 系统分区</h4>
-<p>如无特殊需求，可以只分一个根分区(/)，也可以将 /home 和 /opt 独立分区。其他似乎没有必要。</p>
-<p>分区类型选 20 号 Linux Filesystem。</p>
-<p>运行 <code>mkfs.ext4 /dev/分区名</code> 格式化为 <code>ext4</code> 文件系统。如果要选择其他文件系统，请先三思。</p>
-<h4 id="挂载"><a class="markdownIt-Anchor" href="#挂载"></a> 挂载</h4>
-<div class="highlight-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mount /dev/根分区 /mnt</span><br><span class="line">mount /dev/efi分区 /mnt/boot --<span class="built_in">mkdir</span></span><br></pre></td></tr></table></figure></div>
-<p>其他自建分区同理挂载。</p>
-<h4 id="生成-fstab"><a class="markdownIt-Anchor" href="#生成-fstab"></a> 生成 fstab</h4>
-<p>这是一个告诉 linux 系统开机时要挂载哪些分区的文件。</p>
-<div class="highlight-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">genfstab -U /mnt &gt;&gt; /mnt/etc/fstab</span><br><span class="line"><span class="built_in">cat</span> /mnt/etc/fstab</span><br></pre></td></tr></table></figure></div>
-<p>生成后检查一下有没有问题，若有，手动修改。</p>
-<p>注：新系统的根目录 <code>/</code> 在这里被我们挂载到 <code>/mnt</code>，但对新系统来说还是 <code>/</code>，请不要画蛇添足。</p>
-<h3 id="配置新系统"><a class="markdownIt-Anchor" href="#配置新系统"></a> 配置新系统</h3>
-<h4 id="安装必要软件包-chroot"><a class="markdownIt-Anchor" href="#安装必要软件包-chroot"></a> 安装必要软件包 &amp; chroot</h4>
-<div class="highlight-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pacstrap -K /mnt base base-devel linux linux-firmware vim nano</span><br><span class="line">arch-chroot /mnt</span><br></pre></td></tr></table></figure></div>
-<h4 id="设置时间"><a class="markdownIt-Anchor" href="#设置时间"></a> 设置时间</h4>
-<p><s>很遗憾没有北京时间</s></p>
-<div class="highlight-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ln</span> -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</span><br><span class="line">hwclock --systohc</span><br></pre></td></tr></table></figure></div>
-<h4 id="区域与语言设置"><a class="markdownIt-Anchor" href="#区域与语言设置"></a> 区域与语言设置</h4>
-<p>编辑 <code>/etc/locale.gen</code>，取消注释 <code>en_US.UTF-8 UTF-8</code> 和 <code>zh_CN.UTF-8 UTF-8</code> 两行。之后运行</p>
-<div class="highlight-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">locale-gen</span><br></pre></td></tr></table></figure></div>
-<p>为避免麻烦，这里先用英文，有 GUI 之后再改。创建并编辑 <code>/etc/locale.conf</code>，输入：</p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LANG=en_US.UTF-8</span><br></pre></td></tr></table></figure></div>
-<h4 id="主机名与账户密码"><a class="markdownIt-Anchor" href="#主机名与账户密码"></a> 主机名与账户密码</h4>
-<div class="highlight-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> 起个霸气的名字 &gt; /etc/hostname</span><br></pre></td></tr></table></figure></div>
-<p>设置 root 密码。</p>
-<div class="highlight-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">passwd</span><br></pre></td></tr></table></figure></div>
-<p>再创建一个管理员账户：</p>
-<div class="highlight-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">useradd -G wheel 管理员账户名</span><br><span class="line">passwd 管理员账户名</span><br></pre></td></tr></table></figure></div>
-<p>开通权限，修改 <code>/etc/sudoers</code> 文件，取消注释：</p>
-<div class="highlight-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Uncomment to allow members of group wheel to execute any command</span></span><br><span class="line">%wheel ALL=(ALL:ALL) ALL</span><br></pre></td></tr></table></figure></div>
-<h4 id="启用-multilib"><a class="markdownIt-Anchor" href="#启用-multilib"></a> 启用 multilib</h4>
-<p>编辑 <code>/etc/pacman.conf</code>，取消注释：</p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[multilib]</span><br><span class="line">Include = /etc/pacman.d/mirrorlist</span><br></pre></td></tr></table></figure></div>
-<h4 id="grub"><a class="markdownIt-Anchor" href="#grub"></a> GRUB</h4>
-<p><a class="link"   target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/GRUB" >建议阅读 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>。</p>
-<div class="highlight-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pacman -S grub efibootmgr</span><br><span class="line">grub-install --target=x86_64-efi --efi-directory=/efi分区 --bootloader-id=GRUB</span><br><span class="line">grub-mkconfig -o /efi分区/grub/grub.cfg</span><br></pre></td></tr></table></figure></div>
-<h2 id="安装并配置-plasma-桌面与常用软件"><a class="markdownIt-Anchor" href="#安装并配置-plasma-桌面与常用软件"></a> 安装并配置 Plasma 桌面与常用软件</h2>
-<p>可以先重启检查一下能不能启动，也可以直接继续安装。</p>
-<div class="highlight-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pacman -S ark iwd openssh xdg-utils dolphin konsole plasma-meta wget egl-wayland plasma-workspace wireless_tools htop smartmontools wpa_supplicant sddm plasma networkmanager</span><br><span class="line">systemctl <span class="built_in">enable</span> sddm.service</span><br><span class="line">systemctl <span class="built_in">enable</span> NetworkManager.service</span><br></pre></td></tr></table></figure></div>
-<h3 id="安装显卡驱动"><a class="markdownIt-Anchor" href="#安装显卡驱动"></a> 安装显卡驱动</h3>
-<p>仅记录 intel CPU 核显。其他请参见 <a class="link"   target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/Xorg#Driver_installation" >Driver installation - ArchWiki <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<div class="highlight-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -S intel-media-driver libva-intel-driver mesa vulkan-intel</span><br></pre></td></tr></table></figure></div>
-<h3 id="安装微码"><a class="markdownIt-Anchor" href="#安装微码"></a> 安装微码</h3>
-<div class="highlight-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -S intel-ucode <span class="comment"># or amd-ucode</span></span><br></pre></td></tr></table></figure></div>
+<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pacman -S sddm plasma konsole dolphin firefox sof-firmware</span><br><span class="line">systemctl <span class="built_in">enable</span> &#123;sddm,NetworkManager&#125;.service</span><br></pre></td></tr></table></figure></div>
+<ul>
+<li><code>sddm</code>：显示管理器</li>
+<li><code>konsole</code>：终端</li>
+<li><code>dolphin</code>：文件管理器</li>
+<li><code>firefox</code>：网页浏览器<span title="你知道的太多了" class="heimu">兼 pdf 阅读器</span>（可换成 <code>chromium</code> 或 <code>google-chrome</code> （AUR））</li>
+<li><code>sof-firmware</code>：音频固件</li>
+<li>应用全家桶：<code>kde-applications</code></li>
+</ul>
+<h3 id="创建管理员账户"><a class="markdownIt-Anchor" href="#创建管理员账户"></a> 创建管理员账户</h3>
+<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">useradd -G wheel 用户名</span><br><span class="line">passwd 用户名</span><br></pre></td></tr></table></figure></div>
+<p>接着修改 <code>/etc/sudoers</code>：</p>
+<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Uncomment to allow members of group wheel to execute any command</span></span><br><span class="line">%wheel ALL=(ALL:ALL) ALL</span><br></pre></td></tr></table></figure></div>
 <h3 id="让我们说中文"><a class="markdownIt-Anchor" href="#让我们说中文"></a> 让我们说中文！</h3>
-<p>安装中文字体。<a class="link"   target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/Localization/Simplified_Chinese#Chinese_fonts" >这里 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> 列出了一些软件包。</p>
-<p>注：HMCL 使用 wqy 字体，请安装。</p>
-
-  <div class="note p-4 mb-4 rounded-small orange icon-padding">
-    <i class="note-icon fa-solid fa-warning"></i><p>不建议使用 noto-fonts-cjk，否则会出现<img  
+<p>安装中文字体，请出门右转 <a class="link"   target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/Localization/Simplified_Chinese#Chinese_fonts" >Arch Wiki<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a>。</p>
+<ul>
+<li><code>noto-fonts-cjk</code> 可能出现日文汉字 <img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="/images/00/ill-chars.png"
-                      style="display: inline; vertical-align: middle;" width="7%"
-                >，<a class="link"   target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/Localization/Simplified_Chinese#Chinese_characters_displayed_as_variant_(Japanese)_glyphs" >解决方法 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-
-  </div>
-<p>编辑 <code>/etc/locale.conf</code>，改成 <code>LANG=zh_CN.UTF-8</code>。</p>
+                      alt="" width="50" style="display:inline" 
+                >，解决方法记录于上方🔗的 1.2.2.2 章节。</li>
+<li>HMCL 可能需要安装 <code>wqy-microhei</code>，不然中文会变成口口。</li>
+</ul>
+<p>再次编辑 <code>/etc/locale.conf</code>，改成 <code>LANG=zh_CN.UTF-8</code>。</p>
 <p>安装 <code>fcitx5</code> 输入法：</p>
-<div class="highlight-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> pacman -S fcitx5 fcitx5-chinese-addons fcitx5-qt fcitx5-gtk fcitx5-configtool</span><br></pre></td></tr></table></figure></div>
-<p>在系统设置中，找到虚拟键盘，选择 Fcitx5。</p>
-<p>编辑 <code>/etc/environment</code>，添加一行 <code>XMODIFIERS=@im=fcitx5</code>，不然包括 VSCode 在内的部分应用无法使用输入法。</p>
-<h3 id="让我们播放声音"><a class="markdownIt-Anchor" href="#让我们播放声音"></a> 让我们播放声音！</h3>
-<p><a class="link"   target="_blank" rel="noopener" href="https://bbs.archlinux.org/viewtopic.php?id=273969" >参考资料 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<div class="highlight-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> pacman -S sof-firmware dkms</span><br><span class="line"><span class="built_in">sudo</span> pacman -S pipewire-&#123;jack,alsa,pulse&#125; wireplumber</span><br><span class="line"><span class="built_in">sudo</span> pacman -S pulseaudio-qt</span><br><span class="line">systemctl --user <span class="built_in">enable</span> --now pipewire pipewire-pulse pipewire-media-session</span><br></pre></td></tr></table></figure></div>
-<h3 id="蓝牙"><a class="markdownIt-Anchor" href="#蓝牙"></a> 蓝牙</h3>
-<div class="highlight-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> pacman -S bluez bluez-utils</span><br><span class="line">systemctl <span class="built_in">enable</span> bluetooth.service --now</span><br></pre></td></tr></table></figure></div>
-<h3 id="代理"><a class="markdownIt-Anchor" href="#代理"></a> 代理</h3>
-<p>先想办法搞到一个 clash for windows。</p>
-<p>然后安装 <code>proxychains</code> 进行终端代理。</p>
-<div class="highlight-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> pacman -S proxychains-ng</span><br></pre></td></tr></table></figure></div>
-<p>编辑 <code>/etc/proxychains.conf</code>，输入：</p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">socks5 127.0.0.1 7890</span><br><span class="line">http 127.0.0.1 7890</span><br></pre></td></tr></table></figure></div>
-<p>配置 <code>git</code> 代理：<s>怎么感觉没用？</s></p>
-<div class="highlight-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.proxy http://127.0.0.1:7890</span><br><span class="line">git config --global https.proxy https://127.0.0.1:7890</span><br></pre></td></tr></table></figure></div>
-<h3 id="yay"><a class="markdownIt-Anchor" href="#yay"></a> yay</h3>
-<p>前往<a class="link"   target="_blank" rel="noopener" href="https://github.com/Jguer/yay" >官网 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<div class="highlight-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> pacman -S --needed git base-devel &amp;&amp; git <span class="built_in">clone</span> https://aur.archlinux.org/yay.git &amp;&amp; <span class="built_in">cd</span> yay</span><br><span class="line">makepkg -si</span><br></pre></td></tr></table></figure></div>
-<p>如果 <code>go</code> 下载失败，执行 <code>proxychains makepkg -si</code></p>
-<p>还不行，换成 <code>yay-bin</code></p>
-<h3 id="vscode"><a class="markdownIt-Anchor" href="#vscode"></a> vscode</h3>
-<p>开源版插件不全，所以这里我们用闭源的 <s>网炸了就 proxychains</s></p>
-<div class="highlight-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yay -S visual-studio-code-bin</span><br></pre></td></tr></table></figure></div>
-<p>按 Ctrl+Comma， 打开设置，修改字体，推荐一款 <code>ttf-fira-code</code>。</p>
-<p>安装插件 <code>markdown all in one</code> 和 <code>math snippets</code>。</p>
+<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> pacman -S fcitx5&#123;,-chinese-addons,-qt,-gtk,-configtool&#125;</span><br></pre></td></tr></table></figure></div>
+<p>在系统设置中，找到虚拟键盘，选择 Fcitx5。<br />
+在 <code>/etc/environment</code> 末尾添加一行 <code>XMODIFIERS=@im=fcitx5</code>，不然包括 VSCode 在内的部分应用无法使用输入法。</p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://fcitx-im.org/wiki/Using_Fcitx_5_on_Wayland#KDE_Plasma"  title="Using Fcitx 5 on Wayland">参考资料<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a>，实测应该把 <code>fcitx</code> 换成 <code>fcitx5</code></p>
 <h3 id="配置登录界面"><a class="markdownIt-Anchor" href="#配置登录界面"></a> 配置登录界面</h3>
-<p>sddm 的默认主题简直是清朝文物。这里我们换成自带的 <code>breeze</code> 主题。</p>
-<p>p.s. 主题文件夹为 <code>/usr/share/sddm/themes</code></p>
-<p>以及 sddm 在我的 2k 显示屏上界面太小，需要改大一些。</p>
+<p>SDDM 的默认主题又老又丑，换成 Plasma 自带的 <code>breeze</code> 主题。（p.s. 主题位于 <code>/usr/share/sddm/themes</code>）</p>
+<p>以及登陆界面在我的 3072x1920 14 寸💻上界面太小，需要改大一些。</p>
 <p>编辑 <code>/usr/lib/sddm/sddm.conf.d/default.conf</code>，找到对应位置改成：</p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[General]</span><br><span class="line">GreeterEnvironment=QT_SCREEN_SCALE_FACTORS=2,QT_FONT_DPI=192</span><br><span class="line"></span><br><span class="line">[Theme]</span><br><span class="line">Current=breeze</span><br></pre></td></tr></table></figure></div>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[General]</span><br><span class="line">GreeterEnvironment=QT_SCREEN_SCALE_FACTORS=2,QT_FONT_DPI=192</span><br><span class="line"></span><br><span class="line">[Theme]</span><br><span class="line">Current=breeze</span><br></pre></td></tr></table></figure></div>
+<p><a class="link"   target="_blank" rel="noopener" href="https://github.com/sddm/sddm/issues/1704"  title="Arch Linux Forums">参考资料<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+<h3 id="使用-pipewire-播放声音"><a class="markdownIt-Anchor" href="#使用-pipewire-播放声音"></a> 使用 pipewire 播放声音</h3>
+<p>据说延时比 pulseaudio 低，但这真的是有必要的吗？</p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://bbs.archlinux.org/viewtopic.php?id=273969"  title="Arch Linux Forums">搬运<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+<p>服务 <code>pipewire-media-session</code> 已经不存在了。</p>
+<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> pacman -S pipewire-&#123;jack,alsa,pulse&#125; wireplumber</span><br><span class="line">systemctl --user <span class="built_in">enable</span> --now pipewire&#123;,-pulse&#125;</span><br></pre></td></tr></table></figure></div>
+<h2 id="其他软件及配置"><a class="markdownIt-Anchor" href="#其他软件及配置"></a> 其他软件及配置</h2>
+<h3 id="启用-archlinuxcn-源"><a class="markdownIt-Anchor" href="#启用-archlinuxcn-源"></a> 启用 archlinuxcn 源</h3>
+<p><a class="link"   target="_blank" rel="noopener" href="https://github.com/archlinuxcn/repo" >摘自<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+<p>在 <code>/etc/pacman.conf</code> 末尾添加：</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[archlinuxcn]</span><br><span class="line">Server = https://repo.archlinuxcn.org/$arch</span><br><span class="line"># Server = https://mirrors.pku.edu.cn/archlinuxcn/$arch</span><br></pre></td></tr></table></figure></div>
+<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> pacman -Sy archlinuxcn-keyring</span><br></pre></td></tr></table></figure></div>
+<h3 id="安装-yay"><a class="markdownIt-Anchor" href="#安装-yay"></a> 安装 yay</h3>
+<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> pacman -S yay</span><br></pre></td></tr></table></figure></div>
+<h3 id="vscode"><a class="markdownIt-Anchor" href="#vscode"></a> vscode</h3>
+<p>开源版插件不全，所以用闭源的。由于 vscode 通过最近文件打开文件夹会变成文件管理器打开，所以再装个补丁。</p>
+<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yay -S visual-studio-code-bin vscode-xdg-patch-hook</span><br></pre></td></tr></table></figure></div>
+<p>按 Ctrl+Comma， 打开设置，修改字体，推荐 Fira Code（运行 <code>pacman -S ttf-fira-code</code> 安装）。</p>
+<p>安装插件 「markdown all in one」 和 「math snippets」。</p>
+<p>修改设置，添加如下内容：</p>
+<div class="code-container" data-rel="Json"><figure class="iseeu highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;[markdown]&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;editor.wordBasedSuggestions&quot;</span><span class="punctuation">:</span> <span class="string">&quot;off&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="comment">// 快速补全</span></span><br><span class="line">    <span class="attr">&quot;editor.quickSuggestions&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;other&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;comments&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;strings&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="comment">// 显示空格</span></span><br><span class="line">    <span class="attr">&quot;editor.renderWhitespace&quot;</span><span class="punctuation">:</span> <span class="string">&quot;all&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="comment">// snippet 提示优先（看个人喜欢）</span></span><br><span class="line">    <span class="attr">&quot;editor.snippetSuggestions&quot;</span><span class="punctuation">:</span> <span class="string">&quot;top&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;editor.tabCompletion&quot;</span><span class="punctuation">:</span> <span class="string">&quot;on&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="comment">// 使用enter 接受提示</span></span><br><span class="line">    <span class="comment">// &quot;editor.acceptSuggestionOnEnter&quot;: &quot;on&quot;,</span></span><br><span class="line"><span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure></div>
+<p><a class="link"   target="_blank" rel="noopener" href="https://www.thisfaner.com/p/edit-markdown-efficiently-in-vscode"  title="在VSCode中高效编辑markdown的正确方式">参考资料<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+<h3 id="代理"><a class="markdownIt-Anchor" href="#代理"></a> 代理</h3>
+<p>安装代理软件 Clash Verge，并导入订阅。</p>
+<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> pacman -S clash-verge</span><br></pre></td></tr></table></figure></div>
+<p>在浏览器配置代理，然后在 clash 里面复制环境变量，编辑 <code>shell</code> 的配置文件，在末尾添加：</p>
+<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">proxy_on</span></span>() &#123;</span><br><span class="line">  <span class="built_in">export</span> https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890 <span class="comment"># 此处粘贴环境变量</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">proxy_off</span></span>() &#123;</span><br><span class="line">  <span class="built_in">unset</span> http_proxy https_proxy all_proxy</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<p>配置 <code>git</code> 代理：</p>
+<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.proxy http://127.0.0.1:7890</span><br><span class="line">git config --global https.proxy https://127.0.0.1:7890</span><br></pre></td></tr></table></figure></div>
 <h3 id="其他软件"><a class="markdownIt-Anchor" href="#其他软件"></a> 其他软件</h3>
-<p>按需安装。</p>
-<div class="highlight-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> pacman -S firefox spectacle kolourpaint partitionmanager thunderbird xournalpp texlive</span><br></pre></td></tr></table></figure></div>
+<p>按需安装。分别是：邮箱，笔记，压缩包管理器，截图工具，画图，<span title="你知道的太多了" class="heimu">蒸汽学原理</span>。</p>
+<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> pacman -S thunderbird xournalpp ark spectacle kolourpaint steam</span><br></pre></td></tr></table></figure></div>
 <p>Thinkbook 2024 G6+ 系列有个 bug，电脑睡眠后合盖会立刻关机，安装补丁：</p>
-<div class="highlight-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> pacman -S ideapad-laptop-tb2024g6plus-dkms</span><br></pre></td></tr></table></figure></div>
-        </div>
+<div class="code-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yay -S ideapad-laptop-tb2024g6plus-dkms</span><br></pre></td></tr></table></figure></div>
+<p><span title="你知道的太多了" class="heimu">怎么电池供电情况下合盖再开盖会变卡？</span></p>
 
-        
-            <div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
-                <div class="article-copyright-info-container">
+		</div>
+
+		
+		<div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+			<div class="article-copyright-info-container">
     <ul>
-        <li><strong>Title:</strong> archlinux 安装记录</li>
+        <li><strong>Title:</strong> Arch Linux 安装记录</li>
         <li><strong>Author:</strong> Berrylium</li>
         <li><strong>Created at
                 :</strong> 2024-11-02 10:05:24</li>
         
             <li>
                 <strong>Updated at
-                    :</strong> 2024-11-05 10:53:22
+                    :</strong> 2025-03-22 20:21:15
             </li>
         
         <li>
@@ -472,62 +491,56 @@ RAM：32GB</p>
     </ul>
 </div>
 
-            </div>
-        
+		</div>
+		
 
-        
-            <ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
-                
-                    <li class="tag-item mx-0.5">
-                        <a href="/tags/archlinux/">#archlinux</a>&nbsp;
-                    </li>
-                
-            </ul>
-        
+		
+		<ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/archlinux/">#archlinux</a>&nbsp;
+			</li>
+			
+		</ul>
+		
 
-        
+		
 
-        
-            <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
-                
-                    <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
-                        <a class="prev"
-                        rel="prev"
-                        href="/2024/11/02/wsl-proxy/"
-                        >
-                            <span class="left arrow-icon flex justify-center items-center">
-                                <i class="fa-solid fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">wsl-proxy</span>
-                                <span class="post-nav-item">Prev posts</span>
-                            </span>
-                        </a>
-                    </div>
-                
-                
-                    <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
-                        <a class="next"
-                        rel="next"
-                        href="/2024/10/31/arch-btrfs/"
-                        >
-                            <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">btrfs 踩坑记</span>
-                                <span class="post-nav-item">Next posts</span>
-                            </span>
-                            <span class="right arrow-icon flex justify-center items-center">
-                                <i class="fa-solid fa-chevron-right"></i>
-                            </span>
-                        </a>
-                    </div>
-                
-            </div>
-        
+		
+		<div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+			
+			<div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="prev" rel="prev" href="/2024/11/02/wsl-proxy/">
+					<span class="left arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-left"></i>
+					</span>
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">wsl-proxy</span>
+						<span class="post-nav-item">Prev posts</span>
+					</span>
+				</a>
+			</div>
+			
+			
+			<div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="next" rel="next" href="/2024/10/31/arch-btrfs/">
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">BTRFS 入坑记</span>
+						<span class="post-nav-item">Next posts</span>
+					</span>
+					<span class="right arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-right"></i>
+					</span>
+				</a>
+			</div>
+			
+		</div>
+		
 
 
-        
-            <div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
-                <div class="comments-container mt-10 w-full ">
+		
+		<div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+			<div class="comments-container mt-10 w-full ">
     <div id="comment-anchor" class="w-full h-2.5"></div>
     <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
         Comments
@@ -567,50 +580,44 @@ RAM：32GB</p>
     
 </div>
 
-            </div>
-        
-    </div>
+		</div>
+		
+	</div>
 
-    
-        <div class="toc-content-container">
-            <div class="post-toc-wrap">
-    <div class="post-toc">
-        <div class="toc-title">On this page</div>
-        <div class="page-title">archlinux 安装记录</div>
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-text"> 前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E5%AE%89%E8%A3%85"><span class="nav-text"> 基础安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%B6%E4%BD%9C%E5%B9%B6%E5%90%AF%E5%8A%A8%E5%AE%89%E8%A3%85%E4%BB%8B%E8%B4%A8"><span class="nav-text"> 制作并启动安装介质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A1%AC%E7%9B%98%E5%88%86%E5%8C%BA%E5%B9%B6%E6%8C%82%E8%BD%BD"><span class="nav-text"> 硬盘分区并挂载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%96%B0%E7%B3%BB%E7%BB%9F"><span class="nav-text"> 配置新系统</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E5%B9%B6%E9%85%8D%E7%BD%AE-plasma-%E6%A1%8C%E9%9D%A2%E4%B8%8E%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6"><span class="nav-text"> 安装并配置 Plasma 桌面与常用软件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E6%98%BE%E5%8D%A1%E9%A9%B1%E5%8A%A8"><span class="nav-text"> 安装显卡驱动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E5%BE%AE%E7%A0%81"><span class="nav-text"> 安装微码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A9%E6%88%91%E4%BB%AC%E8%AF%B4%E4%B8%AD%E6%96%87"><span class="nav-text"> 让我们说中文！</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A9%E6%88%91%E4%BB%AC%E6%92%AD%E6%94%BE%E5%A3%B0%E9%9F%B3"><span class="nav-text"> 让我们播放声音！</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%93%9D%E7%89%99"><span class="nav-text"> 蓝牙</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%90%86"><span class="nav-text"> 代理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#yay"><span class="nav-text"> yay</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode"><span class="nav-text"> vscode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E7%99%BB%E5%BD%95%E7%95%8C%E9%9D%A2"><span class="nav-text"> 配置登录界面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E8%BD%AF%E4%BB%B6"><span class="nav-text"> 其他软件</span></a></li></ol></li></ol>
+	
+	<div class="toc-content-container">
+		<div class="post-toc-wrap">
+	<div class="post-toc">
+		<div class="toc-title">On this page</div>
+		<div class="page-title">Arch Linux 安装记录</div>
+		<ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-text"> 前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#part-i%E5%9F%BA%E7%A1%80%E5%AE%89%E8%A3%85"><span class="nav-text"> Part I.基础安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#11-14-%E5%87%86%E5%A4%87%E5%AE%89%E8%A3%85%E4%BB%8B%E8%B4%A8"><span class="nav-text"> 1.1-1.4 准备安装介质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#17-%E8%81%94%E7%BD%91"><span class="nav-text"> 1.7 联网</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#19-111-%E5%88%86%E5%8C%BA"><span class="nav-text"> 1.9-1.11 分区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#21-%E9%80%89%E6%8B%A9%E9%95%9C%E5%83%8F%E7%AB%99"><span class="nav-text"> 2.1 选择镜像站</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#23-%E5%AE%89%E8%A3%85%E5%BF%85%E9%9C%80%E7%9A%84%E8%BD%AF%E4%BB%B6%E5%8C%85"><span class="nav-text"> 2.3 安装必需的软件包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#34-%E5%8C%BA%E5%9F%9F%E5%92%8C%E6%9C%AC%E5%9C%B0%E5%8C%96%E8%AE%BE%E7%BD%AE"><span class="nav-text"> 3.4 区域和本地化设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#38-%E5%AE%89%E8%A3%85%E5%BC%95%E5%AF%BC%E7%A8%8B%E5%BA%8F"><span class="nav-text"> 3.8 安装引导程序</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#part-ii-%E5%AE%89%E8%A3%85%E6%A1%8C%E9%9D%A2"><span class="nav-text"> Part II. 安装桌面</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-plasma-%E5%B9%B6%E5%90%AF%E7%94%A8%E6%9C%8D%E5%8A%A1"><span class="nav-text"> 安装 plasma 并启用服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E7%AE%A1%E7%90%86%E5%91%98%E8%B4%A6%E6%88%B7"><span class="nav-text"> 创建管理员账户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A9%E6%88%91%E4%BB%AC%E8%AF%B4%E4%B8%AD%E6%96%87"><span class="nav-text"> 让我们说中文！</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E7%99%BB%E5%BD%95%E7%95%8C%E9%9D%A2"><span class="nav-text"> 配置登录界面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-pipewire-%E6%92%AD%E6%94%BE%E5%A3%B0%E9%9F%B3"><span class="nav-text"> 使用 pipewire 播放声音</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E8%BD%AF%E4%BB%B6%E5%8F%8A%E9%85%8D%E7%BD%AE"><span class="nav-text"> 其他软件及配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%AF%E7%94%A8-archlinuxcn-%E6%BA%90"><span class="nav-text"> 启用 archlinuxcn 源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-yay"><span class="nav-text"> 安装 yay</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode"><span class="nav-text"> vscode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%90%86"><span class="nav-text"> 代理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E8%BD%AF%E4%BB%B6"><span class="nav-text"> 其他软件</span></a></li></ol></li></ol>
 
-    </div>
+	</div>
 </div>
-        </div>
-    
+	</div>
+	
 </div>
+			</div>
 
+			
+		</div>
 
-
-                
-
-            </div>
-
-            
-
-        </div>
-
-        <div class="main-content-footer">
-            <footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+		<div class="main-content-footer">
+			<footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
     <div class="info-container py-3 text-center">
         
         <div class="text-center">
             &copy;
             
-              <span>2022</span>
+              <span>2024</span>
               -
             
-            2024&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">Berrylium</a>
+            2025&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">Berrylium</a>
             
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        7 posts in total
+                        8 posts in total
                     </span>
                     
                 </p>
@@ -635,7 +642,7 @@ RAM：32GB</p>
         
         <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
             <span class="lg:block text-sm">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a></span>
-            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.7.3</a></span>
+            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.8.2</a></span>
         </div>
         
         
@@ -661,98 +668,100 @@ RAM：32GB</p>
             </script>
         
         
+            
+                
+        
+                
+        
         
     </div>  
 </footer>
-        </div>
-    </div>
+		</div>
+	</div>
 
-    
-        <div class="post-tools">
-            <div class="post-tools-container">
-    <ul class="article-tools-list">
-        <!-- TOC aside toggle -->
-        
-            <li class="right-bottom-tools page-aside-toggle">
-                <i class="fa-regular fa-outdent"></i>
-            </li>
-        
+	
+	<div class="post-tools">
+		<div class="post-tools-container">
+	<ul class="article-tools-list">
+		<!-- TOC aside toggle -->
+		
+		<li class="right-bottom-tools page-aside-toggle">
+			<i class="fa-regular fa-outdent"></i>
+		</li>
+		
 
-        <!-- go comment -->
-        
-            <li class="go-comment">
-                <i class="fa-regular fa-comments"></i>
-            </li>
-        
-    </ul>
+		<!-- go comment -->
+		
+		<li class="go-comment">
+			<i class="fa-regular fa-comments"></i>
+		</li>
+		
+	</ul>
+</div>
+	</div>
+	
+
+	<div class="right-side-tools-container">
+		<div class="side-tools-container">
+	<ul class="hidden-tools-list">
+		<li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-plus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-minus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+			<i class="fa-regular fa-moon"></i>
+		</li>
+
+		<!-- rss -->
+		
+
+		
+
+		<li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+			<i class="fa-regular fa-arrow-down"></i>
+		</li>
+	</ul>
+
+	<ul class="visible-tools-list">
+		<li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+			<i class="fa-regular fa-cog fa-spin"></i>
+		</li>
+		
+		<li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+			<i class="arrow-up fas fa-arrow-up"></i>
+			<span class="percent"></span>
+		</li>
+		
+		
+	</ul>
+</div>
+	</div>
+
+	<div class="image-viewer-container">
+	<img src="">
 </div>
 
-        </div>
-    
-
-    <div class="right-side-tools-container">
-        <div class="side-tools-container">
-    <ul class="hidden-tools-list">
-        <li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
-            <i class="fa-regular fa-magnifying-glass-plus"></i>
-        </li>
-
-        <li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
-            <i class="fa-regular fa-magnifying-glass-minus"></i>
-        </li>
-
-        <li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
-            <i class="fa-regular fa-moon"></i>
-        </li>
-
-        <!-- rss -->
-        
-
-        
-
-        <li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
-            <i class="fa-regular fa-arrow-down"></i>
-        </li>
-    </ul>
-
-    <ul class="visible-tools-list">
-        <li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
-            <i class="fa-regular fa-cog fa-spin"></i>
-        </li>
-        
-            <li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
-                <i class="arrow-up fas fa-arrow-up"></i>
-                <span class="percent"></span>
-            </li>
-        
-        
-    </ul>
-</div>
-
-    </div>
-
-    <div class="image-viewer-container">
-    <img src="">
-</div>
-
-
-    
+	
 
 </main>
 
 
-    
-<script src="/js/libs/Swup.min.js"></script>
 
-<script src="/js/libs/SwupSlideTheme.min.js"></script>
+<script src="/js/build/libs/Swup.min.js"></script>
 
-<script src="/js/libs/SwupScriptsPlugin.min.js"></script>
+<script src="/js/build/libs/SwupSlideTheme.min.js"></script>
 
-<script src="/js/libs/SwupProgressPlugin.min.js"></script>
+<script src="/js/build/libs/SwupScriptsPlugin.min.js"></script>
 
-<script src="/js/libs/SwupScrollPlugin.min.js"></script>
+<script src="/js/build/libs/SwupProgressPlugin.min.js"></script>
 
-<script src="/js/libs/SwupPreloadPlugin.min.js"></script>
+<script src="/js/build/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupPreloadPlugin.min.js"></script>
 
 <script>
     const swup = new Swup({
@@ -776,44 +785,42 @@ RAM：32GB</p>
 
 
 
+	
+<script src="/js/build/tools/imageViewer.js" type="module"></script>
 
+<script src="/js/build/utils.js" type="module"></script>
 
+<script src="/js/build/main.js" type="module"></script>
 
-<script src="/js/tools/imageViewer.js" type="module"></script>
+<script src="/js/build/layouts/navbarShrink.js" type="module"></script>
 
-<script src="/js/utils.js" type="module"></script>
+<script src="/js/build/tools/scrollTopBottom.js" type="module"></script>
 
-<script src="/js/main.js" type="module"></script>
+<script src="/js/build/tools/lightDarkSwitch.js" type="module"></script>
 
-<script src="/js/layouts/navbarShrink.js" type="module"></script>
-
-<script src="/js/tools/scrollTopBottom.js" type="module"></script>
-
-<script src="/js/tools/lightDarkSwitch.js" type="module"></script>
-
-<script src="/js/layouts/categoryList.js" type="module"></script>
+<script src="/js/build/layouts/categoryList.js" type="module"></script>
 
 
 
 
 
     
-<script src="/js/tools/codeBlock.js" type="module"></script>
+<script src="/js/build/tools/codeBlock.js" type="module"></script>
 
 
 
 
     
-<script src="/js/layouts/lazyload.js" type="module"></script>
+<script src="/js/build/layouts/lazyload.js" type="module"></script>
 
 
 
 
     
-<script src="/js/tools/runtime.js"></script>
+<script src="/js/build/tools/runtime.js"></script>
 
     
-<script src="/js/libs/odometer.min.js"></script>
+<script src="/js/build/libs/odometer.min.js"></script>
 
     
 <link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
@@ -822,10 +829,10 @@ RAM：32GB</p>
 
 
   
-<script src="/js/libs/Typed.min.js"></script>
+<script src="/js/build/libs/Typed.min.js"></script>
 
   
-<script src="/js/plugins/typed.js" type="module"></script>
+<script src="/js/build/plugins/typed.js" type="module"></script>
 
 
 
@@ -835,29 +842,32 @@ RAM：32GB</p>
 
 
     
-<script src="/js/libs/anime.min.js"></script>
+<script src="/js/build/libs/anime.min.js"></script>
 
 
 
 
 
     
-<script src="/js/tools/tocToggle.js" type="module" data-swup-reload-script=""></script>
+<script src="/js/build/tools/tocToggle.js" type="module" data-swup-reload-script=""></script>
 
-<script src="/js/layouts/toc.js" type="module" data-swup-reload-script=""></script>
+<script src="/js/build/layouts/toc.js" type="module" data-swup-reload-script=""></script>
 
-<script src="/js/plugins/tabs.js" type="module" data-swup-reload-script=""></script>
-
-
-
-
-<script src="/js/libs/moment-with-locales.min.js" data-swup-reload-script=""></script>
-
-
-<script src="/js/layouts/essays.js" type="module" data-swup-reload-script=""></script>
+<script src="/js/build/plugins/tabs.js" type="module" data-swup-reload-script=""></script>
 
 
 
 
+<script src="/js/build/libs/moment-with-locales.min.js" data-swup-reload-script=""></script>
+
+
+<script src="/js/build/layouts/essays.js" type="module" data-swup-reload-script=""></script>
+
+
+
+
+
+	
 </body>
+
 </html>
