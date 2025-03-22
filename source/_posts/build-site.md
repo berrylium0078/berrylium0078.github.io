@@ -1,5 +1,5 @@
 ---
-title: 建站踩坑记
+title: 建站记录
 date: 2024-09-05 09:04:39
 tags: 杂项
 mathjax: true
@@ -13,7 +13,8 @@ mathjax: true
 
 加了别的插件解决了问题，所以记录一下搭建过程。
 
-p.s. 学弟不知为何删库跑路了，截至 2024/11/02 仍未回归。
+功能测试[*戳我*](/2024/11/04/test/)
+
 
 ### 安装软件包
 
@@ -62,7 +63,7 @@ npm install markdown-it-task-lists --save
 
 可以尝试一些[其他插件](https://github.com/TenviLi/awesome-hexo-plugins)。
 
-由于 KaTeX 功能不全，且新版 MathJax 做了效率优化，所以这里可以放心选 MathJax。
+由于 KaTeX 支持的功能不如 MathJax 多，且后者做了效率优化，所以这里选 MathJax。
 
 至于缩写……可以配置 vscode snippets（有个插件 `math-snippets` ）辅助输入，或者在文件头部插入自己定义的宏。
 
@@ -96,16 +97,14 @@ markdown_it_plus:
             enable: true
 ```
 
-[测试链接](/2024/09/16/test)
+### 更改字体
 
-### 更改字体字体
-
-可以去 [](https://fonts.google.com) 上找字体。
+可以去 [Google Fonts](https://fonts.google.com) 上找字体。以下为示例：
 
 编辑 `_config.redefine.yml`，找到 `global > fonts > chinese`：
 ```yml
-enable: true
-family: "Noto Serif SC" # Font family
+enable: true # Whether to enable custom chinese fonts
+family: "Noto Sans SC" # Font family
 url: "https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&family=Noto+Serif+SC:wght@200..900&display=swap" # Font URL to CSS file
 ```
 
@@ -117,14 +116,14 @@ url: "https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&family
 npm install hexo-deployer-git --save
 ```
 
-github 上新建名为 *username*.github.io 的**公开**存储库，这里 *username* 是你的 github 用户名
+github 上新建名为 用户名.github.io 的公开仓库。
 
-编辑 `_config.yml`，改成（注意用户名改成你自己的）：
+编辑 `_config.yml`，改成：
 ```yml
 deploy:
   type: git
-  repo: https://github.com/username/username.github.io
-  branch: main
+  repo: https://github.com/用户名/用户名.github.io
+  branch: public
   message: "Site updated: {{ now('YYYY-MM-DD HH:mm:ss') }}"
 ```
 
@@ -132,7 +131,7 @@ deploy:
 
 ```yml
 info:
-    url: https://username.github.io
+    url: https://用户名.github.io
 ```
 
 部署方法
@@ -140,3 +139,70 @@ info:
 ```sh
 hexo g -d
 ```
+
+### 添加自定义 CSS
+
+作为示例，添加一个萌娘百科的黑框。[参考资料](https://wangquanlikun.github.io/2023/03/18/css-moegirl)，但是修改主题文件属于非法操作，事实上我们可以使用 injector 注入 CSS。
+
+编辑 `_config.redefine.yml`，对应位置改成：
+```yml
+inject:
+  enable: true
+  head:
+    - <link rel="stylesheet" href="/css/heimu.css">
+```
+
+新建文件 `/source/css/heimu.css`：
+```css
+.heimu,
+.heimu rt {
+ background-color:#252525;
+}
+.heimu,
+.heimu a,
+a .heimu,
+a.new .heimu,
+span.heimu a.new,
+span.heimu a.external,
+span.heimu a.external:visited,
+span.heimu a.extiw,
+span.heimu a.extiw:visited,
+span.heimu a.mw-disambig,
+span.heimu a.mw-redirect {
+ transition:color 0.13s linear;
+ color:#252525;
+ text-shadow:none
+}
+span.heimu:hover,
+span.heimu:active {
+ color:white
+}
+span.heimu:hover a,
+a:hover span.heimu {
+ color:lightblue
+}
+span.heimu:hover a:visited,
+a:visited:hover span.heimu {
+ color:#C5CAE9
+}
+span.heimu:hover a.new,
+a.new:hover span.heimu {
+ color:#FCC
+}
+span.heimu a.new:hover:visited,
+a.new:hover:visited span.heimu {
+ color:#EF9A9A
+}
+span.heimu:hover a.extiw:visited,
+a.extiw:visited:hover span.heimu {
+ color:#D1C4E9
+}
+```
+
+上述代码是从萌娘百科”借“来的 <span title="你知道的太多了" class="heimu">读书人的事，能算偷么？</span>
+
+以 Firefox 为例：
+- 按下 Ctrl+Shift+C，选择需要查看的元素。
+- 在左侧查看 HTML 代码，例如 `<span title="你知道的太多了" class="heimu">虚构的故事</span>`
+- 看到 `class="heimu"` 在右侧搜索 `heimu`，定位到 `load.php`。
+- 复制所有相关代码。

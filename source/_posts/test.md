@@ -3,6 +3,24 @@ title: 测试页面
 mathjax: true
 ---
 
+想获得同款博客？[*戳我*](/2024/09/05/build-site/)
+
+## 自定义 CSS 测试
+
+<span title="开玩笑的😜" class="heimu">看到我的是猪</span>
+
+```html
+<span title="开玩笑的😜" class="heimu">看到我的是猪</span>
+```
+
+emmm...但是因为隐藏文字是通过修改前景色实现的，不能包含 emoji。
+
+CSS 代码来自萌娘百科。
+
+## 字体测试
+
+关复门liLI1|oO0() `关复门liLI1|oO0()<=>`
+
 ## 数学公式测试
 
 $\KaTeX\quad\LaTeX\quad\TeX$
@@ -25,9 +43,10 @@ $\water,\wate,\liminfty n$
 
 ### 换行
 
-需要用 `\displaylines{}` 或者 `\begin{aligned}\end{aligned}` 等环境括起来。~~强迫你养成等号对齐的好习惯~~
+需要用 `\displaylines{}` 或者 `\begin{aligned}\end{aligned}` 等环境括起来。
 
 无：
+
 $$
 1\\2
 $$
@@ -65,6 +84,7 @@ $$
 $$
 
 aligned：
+
 $$
 \begin{aligned}
 \frac{\partial\mathcal{D}}{\partial t} \quad & = \quad \nabla\times\mathcal{H},   & \quad \text{(Loi de Faraday)} \\[5pt]
@@ -73,6 +93,7 @@ $$
 \nabla\cdot\mathcal{D}                 \quad & = \quad 0.                         & \quad \text{(Loi de Colomb)}
 \end{aligned}
 $$
+
 ```
 
 ### 公式标签、编号

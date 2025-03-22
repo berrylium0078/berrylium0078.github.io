@@ -1,280 +1,241 @@
 ---
-title: archlinux 安装记录
+title: Arch Linux 安装记录
 date: 2024-11-02 10:05:24
 tags: archlinux
 ---
 
 ## 前言
 
-记录一下日用 archlinux 系统的安装过程。使用 KDE Plasma 桌面环境。
+记录日用系统的安装流程，以备不时之需。
 
-以下是笔者的电脑配置：
+但搬 wiki 没什么意思，所以我决定重点记录我个人的一些选择与理由，作为对 wiki 的补充。
+
+执行每一步操作前，请务必==确认你知道自己在做什么==。本文不做任何担保。
+<span title="你知道的太多了" class="heimu">It works on my machine</span>
+<span title="你知道的太多了" class="heimu">It worked last year</span>
+
+{% folding blue::电脑配置 %}
 型号：ThinkBook 14 G6+ IMH
 CPU：Intel® Core™ Ultra 5 125H
-核显：Mesa Intel® Arc
+GPU：Mesa Intel® Arc（核显）
 RAM：32GB
+SSD：1TB
+{% endfolding %}
 
-## 基础安装
+## Part I.[基础安装](https://wiki.archlinuxcn.org/wiki/%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97)
 
-先装一个能启动的 linux。
+按照惯例，新手要在终端手敲命令完成安装！
 
-### 制作并启动安装介质
+<span title="你知道的太多了" class="heimu">逃课方法1：[Archinstall](https://wiki.archlinuxcn.org/wiki/Archinstall)</span>
 
-由于笔者已有安装 archlinux 的硬盘，所以这一步就跳过了。
+<span title="你知道的太多了" class="heimu">逃课方法2：[Arch Linux GUI](https://sourceforge.net/projects/arch-linux-gui/files/)</span>
 
-没有怎么办？
+### 1.1-1.4 准备安装介质
 
-先推荐一款启动盘制作工具：[Ventoy](https://www.ventoy.net/cn/index.html)，只要把下好的 iso 文件复制到 U 盘里就可以用了！非常方便！
+在[下载页面](https://archlinux.org/download/)下载 ISO 文件，并使用 [Ventoy](https://www.ventoy.net/cn/index.html) 制作启动盘。
 
-然后执行 [Installation guide - ArchWiki](https://wiki.archlinux.org/title/Installation_guide) 1.1 ~ 1.8。
+开机按 F1 进入 live 环境，其他电脑型号请自行百度「U盘启动 + 厂商/型号」获得相关教程。
 
-### 硬盘分区并挂载
+### 1.7 联网
 
-前置知识：[Device file - ArchWiki](https://wiki.archlinux.org/title/Device_file#Block_device_names) 中的 1.1.{1,2,6}
+其他可选方案：
+- 通过数据线连接手机，在手机里开启 USB 网络共享。
+- 连手机热点。
 
-~~其实可以自己找规律，不看问题也不大~~
+### 1.9-1.11 分区
 
-终端分区工具推荐 cfdisk。确认写入之前请认真检查。
+#### 设计分区方案
 
-#### EFI 分区
+先选择一款文件系统，笔者使用过 [ext4](https://wiki.archlinux.org/title/Ext4) 和 [btrfs](https://wiki.archlinux.org/title/Btrfs)。
+- ext4 更加稳定，读写速度更快。
+- btrfs 支持快照和数据校验等多种高级功能，并且 CoW 机制能保证数据一致性。
+- <span title="你知道的太多了" class="heimu">一部分人认为 btrfs 容易坏，但[官方](https://btrfs.readthedocs.io/en/latest/Hardware.html#hardware-as-the-main-source-of-filesystem-corruptions)认为大概率是硬件的问题</span>
 
-可以用现成的，可以按需扩容，作为参考我 archlinux 占用 188.2MB，官方推荐 1GB。
+{% folding blue::关于分区的一些个人建议 %}
+1. 将 EFI 分区挂载于 `/efi`（前提是电脑为 UEFI 引导！）
+    - 可以减少 EFI 分区的空间占用。
+    - 本人教训：260M 的 EFI 分区，装完 nvidia 驱动占用 370MB💥
+    - 注意引导程序应能够访问 `/boot` 目录，已知 GRUB 支持 ext4 和 btrfs。
+2. 使用交换文件取代交换分区
+    - 二者在功能和性能上没有区别，前者的优点是可以灵活调整。
+3. 可将特定目录单独分区，例如 `/home`（用户的各种文件）和 `/opt`（独立软件，感觉类似 AppImage）。
+    - 可防止回滚/重装系统时误删文件。
+    - 清除旧系统时可以直接格式化根分区。
+4. 一些不需要分区的目录：
+  1. `/var`
+    - 现代文件系统不会因为存储大量小文件而影响性能。
+    - 主要空间占用来自软件包缓存和系统日志，定期清理即可。
+  2. `/usr`
+    - [见](https://systemd.io/SEPARATE_USR_IS_BROKEN/)
+  3. `/tmp`
+    - 默认使用 `tmpfs` 挂载，因此该分区实际位于内存或交换空间，无需担心性能问题。
+    - 若默认一半物理内存的容量不足，可以临时 `sudo mount -o remount,size=64G /tmp` 或者在 `fstab` 里添加挂载选项 `size=...G` 手动设置大小。
+{% endfolding %}
 
-如果新建的话分区类型选 1 号 EFI System，然后 `mkfs.fat -F 32 /dev/efi分区`。
+这次我试用了 btrfs，过程见我的[*这篇博文*](/2024/10/31/arch-btrfs/)
 
-#### swap 分区
+### 2.1 选择镜像站
 
-主要有两个作用：
-1. 内存不够时将一部分数据交换到硬盘里（相当于一块低速扩展内存）
-2. 休眠时将内存数据保存到硬盘
+<span title="你知道的太多了" class="heimu">我觉得 wiki 废话有点多</span>
 
-看个人需求吧。这里我没有建。
-
-#### 系统分区
-
-如无特殊需求，可以只分一个根分区(`/`)，也可以将 `/home` 和 `/opt` 独立分区。其他似乎没有必要。
-
-分区类型选 20 号 `Linux Filesystem`。
-
-运行 `mkfs.ext4 /dev/分区名` 格式化为 `ext4` 文件系统。如果要选择其他文件系统，请先三思。
-
-#### 挂载
-
-```sh
-mount /dev/根分区 /mnt
-mount /dev/efi分区 /mnt/boot --mkdir
-```
-
-其他自建分区同理挂载。
-
-#### 生成 fstab
-
-这是一个告诉 linux 系统开机时要挂载哪些分区的文件。
-
-```sh
-genfstab -U /mnt >> /mnt/etc/fstab
-cat /mnt/etc/fstab
-```
-
-生成后检查一下有没有问题，若有，手动修改。
-
-注：新系统的根目录 `/` 在这里被我们挂载到 `/mnt`，但对新系统来说还是 `/`，请不要画蛇添足。
-
-### 配置新系统
-
-#### 安装必要软件包 & chroot
+下载中国镜像站列表并编辑，取消注释其中要使用的镜像站。
 
 ```sh
-pacstrap -K /mnt base base-devel linux linux-firmware vim nano
-arch-chroot /mnt
+curl -L 'https://archlinux.org/mirrorlist/?country=CN&protocol=https' -o /etc/pacman.d/mirrorlist
+nano /etc/pacman.d/mirrorlist
 ```
 
-#### 设置时间
-
-~~很遗憾没有北京时间~~
+### 2.3 安装必需的软件包
 
 ```sh
-ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
-hwclock --systohc
+pacstrap -K /mnt base base-devel linux linux-firmware btrfs-progs nano networkmanager wpa_supplicant iwd intel-ucode
 ```
 
-#### 区域与语言设置
+- `networkmanager`, `wpa_supplicant`, `iwd`：联网用的。
+- `btrfs-progs`：管理 `btrfs` 文件系统需要的工具。
+- `base-devel`：包含构建软件包的工具，AUR 上的包默认已经安装 `base-devel`。
 
-编辑 `/etc/locale.gen`，取消注释 `en_US.UTF-8 UTF-8` 和 `zh_CN.UTF-8 UTF-8` 两行。之后运行
+### 3.4 区域和本地化设置
+
+为避免麻烦，先用英文，装完桌面再改成中文。（你也不想在终端里前往桌面要狂按 tab 或切输入法吧？）
+
+编辑 `/etc/locale.gen`，取消注释 `en_US.UTF-8 UTF-8` 和 `zh_CN.UTF-8 UTF-8` 两行。
+
+之后运行
 ```sh
 locale-gen
 ```
-
-为避免麻烦，这里先用英文，有 GUI 之后再改。创建并编辑 `/etc/locale.conf`，输入：
+再编辑 `/etc/locale.conf`：
 ```conf
 LANG=en_US.UTF-8
 ```
 
-#### 主机名与账户密码
+### 3.8 安装引导程序
+
+[GRUB](https://wiki.archlinux.org/title/GRUB) 可自定义主题，暂时不想尝试 Systemd Boot。
 
 ```sh
-echo 起个霸气的名字 > /etc/hostname
+pacman -S efibootmgr grub
+grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB
+grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-设置 root 密码。
+## Part II. 安装桌面
+
+### 安装 plasma 并启用服务
+
+{% note green fa-lightbulb %}
+
+花括号是 shell 的语法糖，如 `a{b,c}d` 表示 `abd acd`。
+
+{% endnote %}
 
 ```sh
-passwd
+pacman -S sddm plasma konsole dolphin firefox sof-firmware
+systemctl enable {sddm,NetworkManager}.service
 ```
+- `sddm`：显示管理器
+- `konsole`：终端
+- `dolphin`：文件管理器
+- `firefox`：网页浏览器<span title="你知道的太多了" class="heimu">兼 pdf 阅读器</span>（可换成 `chromium` 或 `google-chrome` （AUR））
+- `sof-firmware`：音频固件
+- 应用全家桶：`kde-applications`
 
-再创建一个管理员账户[^1]：
+### 创建管理员账户
 
 ```sh
-useradd -G wheel 管理员账户名
-passwd 管理员账户名
+useradd -G wheel 用户名
+passwd 用户名
 ```
-
-开通权限，修改 `/etc/sudoers` 文件，取消注释：
+接着修改 `/etc/sudoers`：
 ```sh
 # Uncomment to allow members of group wheel to execute any command
 %wheel ALL=(ALL:ALL) ALL
 ```
 
-[^1]:[如何在 Arch Linux 下创建并配置 sudo 用户？](https://zhuanlan.zhihu.com/p/614960162)
-
-
-#### 启用 multilib
-
-编辑 `/etc/pacman.conf`，取消注释：
-
-```conf
-[multilib]
-Include = /etc/pacman.d/mirrorlist
-```
-
-#### GRUB
-
-[建议阅读](https://wiki.archlinux.org/title/GRUB)。
-
-```sh
-pacman -S grub efibootmgr
-grub-install --target=x86_64-efi --efi-directory=/efi分区 --bootloader-id=GRUB
-grub-mkconfig -o /efi分区/grub/grub.cfg
-```
-
-## 安装并配置 Plasma 桌面与常用软件
-
-可以先重启检查一下能不能启动，也可以直接继续安装。
-
-```sh
-pacman -S ark iwd openssh xdg-utils dolphin konsole plasma-meta wget egl-wayland plasma-workspace wireless_tools htop smartmontools wpa_supplicant sddm plasma networkmanager
-systemctl enable sddm.service
-systemctl enable NetworkManager.service
-```
-
-### 安装显卡驱动
-
-仅记录 Intel 核显。其他请参见 [Driver installation - ArchWiki](https://wiki.archlinux.org/title/Xorg#Driver_installation)
-
-```sh
-pacman -S intel-media-driver libva-intel-driver mesa vulkan-intel
-```
-
-### 安装微码
-
-```sh
-pacman -S intel-ucode # or amd-ucode
-```
-
 ### 让我们说中文！
 
-安装中文字体。[这里](https://wiki.archlinux.org/title/Localization/Simplified_Chinese#Chinese_fonts) 列出了一些软件包。
+安装中文字体，请出门右转 [Arch Wiki](https://wiki.archlinux.org/title/Localization/Simplified_Chinese#Chinese_fonts)。
+- `noto-fonts-cjk` 可能出现日文汉字 ![](/images/00/ill-chars.png =50x){style="display:inline"}，解决方法记录于上方🔗的 1.2.2.2 章节。
+- HMCL 可能需要安装 `wqy-microhei`，不然中文会变成口口。
 
-注：HMCL 使用 wqy 字体，请安装。
-
-{% note orange fa-warning  %}
-不建议使用 noto-fonts-cjk，否则会出现![](/images/00/ill-chars.png =50x){style="display:inline"}，[解决方法](https://wiki.archlinux.org/title/Localization/Simplified_Chinese#Chinese_characters_displayed_as_variant_(Japanese)_glyphs)
-{% endnote %}
-
-编辑 `/etc/locale.conf`，改成 `LANG=zh_CN.UTF-8`。
+再次编辑 `/etc/locale.conf`，改成 `LANG=zh_CN.UTF-8`。
 
 安装 `fcitx5` 输入法：
 ```sh
-sudo pacman -S fcitx5 fcitx5-chinese-addons fcitx5-qt fcitx5-gtk fcitx5-configtool
+sudo pacman -S fcitx5{,-chinese-addons,-qt,-gtk,-configtool}
 ```
 在系统设置中，找到虚拟键盘，选择 Fcitx5。
+在 `/etc/environment` 末尾添加一行 `XMODIFIERS=@im=fcitx5`，不然包括 VSCode 在内的部分应用无法使用输入法。
 
-编辑 `/etc/environment`，添加一行 `XMODIFIERS=@im=fcitx5`，不然包括 VSCode 在内的部分应用无法使用输入法[^2]。
+[参考资料](https://fcitx-im.org/wiki/Using_Fcitx_5_on_Wayland#KDE_Plasma "Using Fcitx 5 on Wayland")，实测应该把 `fcitx` 换成 `fcitx5`
 
-[^2]:[Using Fcitx 5 on Wayland](https://fcitx-im.org/wiki/Using_Fcitx_5_on_Wayland#KDE_Plasma)
+### 配置登录界面
 
-### 让我们播放声音！
+SDDM 的默认主题又老又丑，换成 Plasma 自带的 `breeze` 主题。（p.s. 主题位于 `/usr/share/sddm/themes`）
 
-参考[^3]。
+以及登陆界面在我的 3072x1920 14 寸💻上界面太小，需要改大一些。
 
-```sh
-sudo pacman -S sof-firmware dkms
-sudo pacman -S pipewire-{jack,alsa,pulse} wireplumber
-sudo pacman -S pulseaudio-qt
-systemctl --user enable --now pipewire pipewire-pulse pipewire-media-session
-```
-
-[^3]:[how to switch to pipewire from pulseaudio](https://bbs.archlinux.org/viewtopic.php?id=273969)
-
-
-
-### 蓝牙
-
-```sh
-sudo pacman -S bluez bluez-utils
-systemctl enable bluetooth.service --now
-```
-
-### 代理
-
-先想办法搞到一个 clash for windows。
-
-然后安装 `proxychains` 进行终端代理。
-
-```sh
-sudo pacman -S proxychains-ng
-```
-
-编辑 `/etc/proxychains.conf`，输入：
-
+编辑 `/usr/lib/sddm/sddm.conf.d/default.conf`，找到对应位置改成：
 ```conf
-socks5 127.0.0.1 7890
-http 127.0.0.1 7890
+[General]
+GreeterEnvironment=QT_SCREEN_SCALE_FACTORS=2,QT_FONT_DPI=192
+
+[Theme]
+Current=breeze
 ```
 
-配置 `git` 代理：~~怎么感觉没用？~~
+[参考资料](https://github.com/sddm/sddm/issues/1704 "Arch Linux Forums")
+
+### 使用 pipewire 播放声音
+
+据说延时比 pulseaudio 低，但这真的是有必要的吗？
+
+[搬运](https://bbs.archlinux.org/viewtopic.php?id=273969 "Arch Linux Forums")
+
+服务 `pipewire-media-session` 已经不存在了。
 
 ```sh
-git config --global http.proxy http://127.0.0.1:7890
-git config --global https.proxy https://127.0.0.1:7890
+sudo pacman -S pipewire-{jack,alsa,pulse} wireplumber
+systemctl --user enable --now pipewire{,-pulse}
 ```
 
-### yay
+## 其他软件及配置
 
-前往[官网](https://github.com/Jguer/yay)
+### 启用 archlinuxcn 源
+
+[摘自](https://github.com/archlinuxcn/repo)
+
+在 `/etc/pacman.conf` 末尾添加：
+```conf
+[archlinuxcn]
+Server = https://repo.archlinuxcn.org/$arch
+# Server = https://mirrors.pku.edu.cn/archlinuxcn/$arch
+```
 
 ```sh
-sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay
-makepkg -si
+sudo pacman -Sy archlinuxcn-keyring
 ```
 
-如果 `go` 下载失败，执行 `proxychains makepkg -si`
+### 安装 yay
 
-还不行，换成 `yay-bin`
+```sh
+sudo pacman -S yay
+```
 
 ### vscode
 
-开源版插件不全，所以这里我们用闭源的 ~~网炸了就 proxychains~~
+开源版插件不全，所以用闭源的。由于 vscode 通过最近文件打开文件夹会变成文件管理器打开，所以再装个补丁。
 
 ```sh
-yay -S visual-studio-code-bin
+yay -S visual-studio-code-bin vscode-xdg-patch-hook
 ```
 
-按 Ctrl+Comma， 打开设置，修改字体，推荐一款 `ttf-fira-code`。
+按 Ctrl+Comma， 打开设置，修改字体，推荐 Fira Code（运行 `pacman -S ttf-fira-code` 安装）。
 
-安装插件 `markdown all in one` 和 `math snippets`。
+安装插件 「markdown all in one」 和 「math snippets」。
 
-修改设置，添加如下内容[^4]：
+修改设置，添加如下内容：
 ```json
     "[markdown]": {
         "editor.wordBasedSuggestions": "off",
@@ -294,40 +255,43 @@ yay -S visual-studio-code-bin
     },
 ```
 
-[^4]:[在VSCode中高效编辑markdown的正确方式](https://www.thisfaner.com/p/edit-markdown-efficiently-in-vscode)
+[参考资料](https://www.thisfaner.com/p/edit-markdown-efficiently-in-vscode "在VSCode中高效编辑markdown的正确方式")
 
-### 配置登录界面
+### 代理
 
-sddm 的默认主题简直是清朝文物。这里我们换成自带的 `breeze` 主题。
-
-p.s. 主题文件夹为 `/usr/share/sddm/themes`
-
-以及 sddm 在我的 3072x1920 显示屏上界面太小，需要改大一些。
-
-编辑 `/usr/lib/sddm/sddm.conf.d/default.conf`，找到对应位置改成[^5]：
-```conf
-[General]
-GreeterEnvironment=QT_SCREEN_SCALE_FACTORS=2,QT_FONT_DPI=192
-
-[Theme]
-Current=breeze
+安装代理软件 Clash Verge，并导入订阅。
+```sh
+sudo pacman -S clash-verge
 ```
 
-[^5]:[Specify DPI on Wayland?](https://github.com/sddm/sddm/issues/1704)
+在浏览器配置代理，然后在 clash 里面复制环境变量，编辑 `shell` 的配置文件，在末尾添加：
 
+```sh
+function proxy_on() {
+  export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890 # 此处粘贴环境变量
+}
+function proxy_off() {
+  unset http_proxy https_proxy all_proxy
+}
+```
+
+配置 `git` 代理：
+
+```sh
+git config --global http.proxy http://127.0.0.1:7890
+git config --global https.proxy https://127.0.0.1:7890
+```
 
 ### 其他软件
 
-按需安装。
+按需安装。分别是：邮箱，笔记，压缩包管理器，截图工具，画图，<span title="你知道的太多了" class="heimu">蒸汽学原理</span>。
 
 ```sh
-sudo pacman -S firefox spectacle kolourpaint partitionmanager thunderbird xournalpp texlive
+sudo pacman -S thunderbird xournalpp ark spectacle kolourpaint steam
 ```
 
-Thinkbook 2024 G6+ 系列有个 bug，电脑睡眠后合盖会立刻关机，安装补丁[^6]：
-[^6]:[ThinkBook 14+ Gen6 AMD resets when suspending with lid close](https://bbs.archlinux.org/viewtopic.php?pid=2175065#p2175065)
-
-
+Thinkbook 2024 G6+ 系列有个 bug，电脑睡眠后合盖会立刻关机，安装补丁：
 ```sh
-sudo pacman -S ideapad-laptop-tb2024g6plus-dkms
+yay -S ideapad-laptop-tb2024g6plus-dkms
 ```
+<span title="你知道的太多了" class="heimu">怎么电池供电情况下合盖再开盖会变卡？</span>

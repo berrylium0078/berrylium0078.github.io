@@ -103,7 +103,7 @@ theme: redefine
 deploy:
   type: git
   repo: https://github.com/berrylium0078/berrylium0078.github.io
-  branch: main
+  branch: public
   message: "Site updated: {{ now('YYYY-MM-DD HH:mm:ss') }}"
 
 

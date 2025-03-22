@@ -52,13 +52,13 @@ global:
     # Chinese fonts
     chinese: 
       enable: true # Whether to enable custom chinese fonts
-      family: "Noto Serif SC" # Font family
+      family: "Noto Sans SC" # Font family
       url: "https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&family=Noto+Serif+SC:wght@200..900&display=swap" # Font URL to CSS file
     # English fonts
-    english:
-      enable: false # Whether to enable custom english fonts
-      family:  # Font family
-      url:  # Font URL to CSS file
+    english:  
+      enable: true # Whether to enable custom english fonts
+      family: "Noto Sans" # Font family
+      url: "https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,300..900;1,300..900" # Font URL to CSS file
     # Custom title fonts (navbar, sidebar)
     title:
       enable: false # Whether to enable custom title fonts
@@ -90,7 +90,10 @@ global:
     enable: false
     custom_message: # Custom message. If empty, the site title will be displayed
   # Whether to enable open graph
-  open_graph: true
+  open_graph:
+    enable: true
+    image: your_image_path
+    description: your_description
   # Google Analytics
   google_analytics:
     enable: false # Whether to enable Google Analytics
@@ -403,15 +406,14 @@ footer:
 # Docs: https://redefine-docs.ohevan.com/inject
 inject:
   # Whether to enable inject
-  enable: false
+  enable: true
   # Inject custom head html code
   head: 
-    -
-    -
+    - <link rel="stylesheet" href="/css/heimu.css">
   # Inject custom footer html code
-  footer:
-    -
-    -
+  #footer:
+  #  -
+  #  -
 # INJECT <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end
 
 
