@@ -1,7 +1,8 @@
 ---
 title: Arch Linux 安装记录
-date: 2024-11-02 10:05:24
-tags: archlinux
+date: 2024-10-31 17:03:08
+excerpt: 记录日用系统的安装流程，以备不时之需
+category: [瞎折腾,Linux]
 ---
 
 ## 前言
@@ -233,30 +234,6 @@ yay -S visual-studio-code-bin vscode-xdg-patch-hook
 
 按 Ctrl+Comma， 打开设置，修改字体，推荐 Fira Code（运行 `pacman -S ttf-fira-code` 安装）。
 
-安装插件 「markdown all in one」 和 「math snippets」。
-
-修改设置，添加如下内容：
-```json
-    "[markdown]": {
-        "editor.wordBasedSuggestions": "off",
-        // 快速补全
-        "editor.quickSuggestions": {
-            "other": true,
-            "comments": true,
-            "strings": true
-        },
-        // 显示空格
-        "editor.renderWhitespace": "all",
-        // snippet 提示优先（看个人喜欢）
-        "editor.snippetSuggestions": "top",
-        "editor.tabCompletion": "on",
-        // 使用enter 接受提示
-        // "editor.acceptSuggestionOnEnter": "on",
-    },
-```
-
-[参考资料](https://www.thisfaner.com/p/edit-markdown-efficiently-in-vscode "在VSCode中高效编辑markdown的正确方式")
-
 ### 代理
 
 安装代理软件 Clash Verge，并导入订阅。
@@ -284,14 +261,14 @@ git config --global https.proxy https://127.0.0.1:7890
 
 ### 其他软件
 
-按需安装。分别是：邮箱，笔记，压缩包管理器，截图工具，画图，<span title="你知道的太多了" class="heimu">蒸汽学原理</span>。
+按需安装。分别是：邮箱，笔记，压缩包管理器，截图工具，画图，[蒸汽学原理]{.heimu title="你知道的太多了"}。
 
 ```sh
 sudo pacman -S thunderbird xournalpp ark spectacle kolourpaint steam
 ```
 
-Thinkbook 2024 G6+ 系列有个 bug，电脑睡眠后合盖会立刻关机，安装补丁：
-```sh
-yay -S ideapad-laptop-tb2024g6plus-dkms
-```
-<span title="你知道的太多了" class="heimu">怎么电池供电情况下合盖再开盖会变卡？</span>
+### Thinkbook 补丁
+
+Thinkbook 2024 系列有个 bug，电脑睡眠后合盖会立刻关机，安装补丁 `ideapad-laptop-tb2024g6plus-dkms`。
+
+然而 AUR 上的包已经过时了，所以我们直接去上游 `github` [仓库](https://github.com/ty2/ideapad-laptop-tb2024g6plus)。

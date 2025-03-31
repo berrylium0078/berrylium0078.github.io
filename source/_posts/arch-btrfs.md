@@ -1,30 +1,32 @@
 ---
 title: BTRFS 入坑记
 date: 2024-10-31 17:03:08
-tags: archlinux
+excerpt: 记录了为全新安装的 Arch Linux 配置 btrfs 文件系统的过程
+category: [瞎折腾,Linux]
 ---
 
 被学长传教了……
 
 ## 关于 [BTRFS](https://btrfs.readthedocs.io)
 
-B-Tree <span title="你知道的太多了" class="heimu">Butter</span> <span title="你知道的太多了" class="heimu">Bug</span> File System 是一个支持写时复制(CoW)、子卷快照、数据校验、透明压缩等多种高级功能的现代文件系统。
+{B|<span title="你知道的太多了" class="heimu">Bug</span>}-Tree File System 是一个支持写时复制(CoW)、子卷快照、数据校验、透明压缩等多种高级功能的现代文件系统。
 - 写时复制（Copy on Write, CoW）
   - 修改不是原地覆盖，而是先写入到空白区域，再修改指针，可保证数据一致性。
   - 支持快速复制（reflink），因为 CoW 机制所以后续只需要存储对副本的改动。
   - 避免对统一区域的反复写入，对 SSD 友好。
-- 快照和子卷地位相当，也可以修改和创建快照。有人认为将其称作“分支(fork)”更加贴切。
-- 数据校验可以发现 silent corruption 等数据损坏。<span title="你知道的太多了" class="heimu">硬盘受到了宇宙高能射线的影响，发生了位反转！</span>
+- 快照和子卷地位相当，也可以修改和创建快照。有人认为将其称作“分支”更加贴切。
+- 数据校验可以发现 silent corruption 等数据损坏。
   - 发现损坏时，会尝试用通过校验的备份修复，失败则报告 IO 错误。默认配置中，数据只存一份，元数据复制两份[^duplicate]。
-  - 重要数据需要在其他设备上备份。[文件备份的 321 原则](https://sspai.com/post/39591)。
+  - 重要数据需要在其他设备上备份[^backup]。
 - 透明压缩：
   - 通过牺牲一定的 CPU 时间，减少实际写入硬盘的数据，提高存储容量与 IO 速度。
   - 文件系统内部行为，用户无感。
 - 顾名思义，该文件系统使用数据结构 B 树维护元数据。
   - 为了支持其先进的快照功能，实际使用的是一种能够高效复制的改进版。[^btree]
-  - 原理简单来说就是共用相同部分，或者理解为一种懒惰思想。
+  - 原理可以理解为一种懒惰思想，因而会共用各副本的相同部分。
   - <span title="某退役 OIer 的评论" class="heimu">这就是有垃圾回收的可持久化多叉平衡树，太裤辣！</span>
 
+[^backup]: [文件备份的 321 原则](https://sspai.com/post/39591)，本地一份，云端一份，算上原件共三份。
 [^duplicate]: 见[格式化选项](https://btrfs.readthedocs.io/en/latest/mkfs.btrfs.html#options) `-d` 和 `-m` 部分。
 [^btree]: [幻灯片](https://github.com/liujinmarshall/btrfs-doc/blob/master/LinuxFS_Workshop%20on%20wiki%20----.pdf)和[论文](https://github.com/liujinmarshall/btrfs-doc/blob/master/btree_TOS%20on%20wiki%20-----.pdf)
 [^cowlog]: [copy on write logging](https://btrfs.readthedocs.io/en/latest/dev/dev-btrfs-design.html#copy-on-write-logging)
@@ -33,7 +35,9 @@ B-Tree <span title="你知道的太多了" class="heimu">Butter</span> <span tit
 
 安装软件包 `btrfs-progs`。
 
-用文件虚拟出一块硬盘，用来测试 btrfs 在各种情况下的表现。[搬运](https://zhuanlan.zhihu.com/p/272482813 "硬盘错误模拟测试 - 知乎")
+用文件虚拟出一块硬盘，用来测试 btrfs 在各种情况下的表现[^failure]。
+
+[^failure]:[硬盘错误模拟测试 - 知乎](https://zhuanlan.zhihu.com/p/272482813)
 
 ```sh
 # 创建一个镜像
@@ -46,7 +50,9 @@ sudo mount -o loop test.img /mnt
 
 ## 为新系统安装 BTRFS
 
-记录了笔者为全新安装的 Arch Linux 配置 btrfs 文件系统的过程，安装系统全过程[*戳我*](/2024/11/02/arch-install)。
+记录了笔者为全新安装的 Arch Linux 配置 btrfs 文件系统的过程，全过程[*戳我*](/2024/11/02/arch-install)。
+
+参考资料[^btrfs]
 
 笔者的分区方案：
 - `/dev/nvme0n1p1` 分配 260MB，挂载于 `/efi`。
@@ -59,6 +65,7 @@ mount -t btrfs /dev/nvme0n1p2 /mnt
 ```
 
 ### 设计子卷布局
+[^btrfs]: [Arch Linux+btrfs配置简明指南](https://blog.azurezeng.com/archlinux-with-btrfs-simple-guide/)
 
 - 个人认为，尽量不要在需要拍摄快照的子卷里面放子卷，用挂载或软链接代替。
   - btrfs 中的子卷使用目录结构组织，表现像文件夹。
@@ -133,7 +140,9 @@ mount --mkdir -o noatime,compress=zstd:3,subvol=@docker    /dev/nvme0n1p2 /mnt/v
 pacstrap -K /mnt btrfs-progs
 ```
 
-## 安装 Snapper 并配置
+## 安装 Snapper[^snapper] 并配置
+
+[^snapper]: [Snapper - ArchWiki](https://wiki.archlinux.org/title/Snapper)
 
 ```sh
 sudo pacman -S snapper
@@ -204,6 +213,9 @@ swapon /swap/swapfile
 以在开机时自动启用交换文件。
 
 ### 配置休眠
+参考 Arch Wiki[^suspend]。
+
+[^suspend]: [Suspend and hibernate - ArchWiki](https://wiki.archlinux.org/title/Power_management/Suspend_and_hibernate#Hibernation)
 
 运行
 ```
@@ -221,13 +233,3 @@ w    /sys/power/resume  -    -    -    -   /dev/nvme0n1p2
 ```conf
 HOOKS=(base udev autodetect microcode modconf kms keyboard keymap consolefont block filesystems resume fsck)
 ```
-
-## 参考资料
-
-[Arch Linux+btrfs配置简明指南](https://blog.azurezeng.com/archlinux-with-btrfs-simple-guide/)
-
-[Snapper - ArchWiki](https://wiki.archlinux.org/title/Snapper)
-
-[BTRFS Documentation](https://btrfs.readthedocs.io/)
-
-[Suspend and hibernate - ArchWiki](https://wiki.archlinux.org/title/Power_management/Suspend_and_hibernate#Hibernation)

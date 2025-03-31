@@ -1,0 +1,59 @@
+{
+	// Place your berrylium-blog workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	 "folding": {
+	 	"scope": "markdown",
+	 	"prefix": "folding",
+	 	"body": [
+	 		"{% folding ${1:color}::${2:title} %}",
+			"$0",
+	 		"{% endfolding %}"
+	 	],
+		"description": "redefine writing module"
+	},
+	"note": {
+		"scope": "markdown",
+		"prefix": "note",
+		"body": [
+			"{% note ${1:color} ${2:fa-icon} %}",
+		   "$0",
+			"{% endnote %}"
+		],
+		"description": "redefine writing module"
+    },
+	"notel": {
+		"scope": "markdown",
+		"prefix": "notel",
+		"body": [
+			"{% notel ${1:color} ${2:fa-icon} ${3:title} %}",
+		   "$0",
+			"{% endnotel %}"
+		],
+		"description": "redefine writing module"
+    },
+	"button": {
+		"scope": "markdown",
+		"prefix": "button",
+		"body": [
+			"{% btn ${1:optional size}::${2:name}::${3:url}::${4:optional icon} %}",
+		],
+		"description": "redefine writing module"
+    },
+	"tabs": {
+		"scope": "markdown",
+		"prefix": "tabs",
+		"body": [
+			"{% tabs ${1:ID} %}",
+			"<!-- tab ${2:name of tab} -->",
+			"$0",
+			"<!-- endtab -->",
+			"{% endtabs %}"
+		],
+		"description": "redefine writing module"
+	}
+}

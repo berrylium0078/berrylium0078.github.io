@@ -410,6 +410,7 @@ inject:
   # Inject custom head html code
   head: 
     - <link rel="stylesheet" href="/css/heimu.css">
+    - <link rel="stylesheet" href="/css/keybd.css">
   # Inject custom footer html code
   #footer:
   #  -

@@ -1,10 +1,11 @@
 ---
-title: wsl-proxy
-date: 2024-11-02 17:36:51
-tags: wsl
+title: wsl 代理设置
+date: 2024-09-02 17:36:51
+category: [瞎折腾,Linux]
+excerpt: WSL2 可以配置使用 Windows 系统的代理……
 ---
 
-WSL2 可以通过配置走 Windows 的代理。
+WSL2 可以配置使用 Windows 系统的代理。
 
 创建并编辑主目录（`C:\Users\用户名`）下 `.wslconfig` 文件：
 
