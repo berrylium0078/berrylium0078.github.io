@@ -16,5 +16,3 @@ tags: Blue Archive
 2. $k>0,P_k=\displaystyle\sum_{i=tr}^{tr+t-1}p^{k}q^{i-k}\dbinom{i-1}{k-1}=p^k\sum_{j=0}^{t-1}q^j\dbinom{k+j-1}{k-1}=[X^{t-1}]\cfrac{p^k}{(1-qX)^k}\cdot\frac{1}{1-X}$
 
 所求为 $\displaystyle P=P_0+\sum_{k=1}^m P_k=P_0+[X^{t-1}]\frac{1}{1-X}\sum_{k=1}^m \left( \cfrac{p}{1-qX} \right)^k=P_0+[X^{t-1}]\frac{1}{1-X}\cfrac{p}{1-qX}\cfrac{\left( \cfrac{p}{1-qX} \right)^m-1}{\cfrac{p}{1-qX}-1}=q^{mt}-\cfrac pq[X^{t-1}]\cfrac{\left( \cfrac{p}{1-qX} \right)^m-1}{(1-X)^2}=q^{mt}-\cfrac pq\sum_{i=0}^{t-1}(t-i)\left[[X^i]\left( \cfrac{p}{1-qX} \right)^m-[i=0]\right]=q^{mt}-\cfrac pq\sum_{i=0}^{t-1}(t-i)\left[p^mq^i\dbinom{m-1+i}{m-1}-[i=0]\right]$
-
-
