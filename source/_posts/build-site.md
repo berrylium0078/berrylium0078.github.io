@@ -23,7 +23,7 @@ category: 博客搭建
 
 首先使用适合你的操作系统的方法安装 nodejs 和 npm。
 ```sh
-sudo pacman -S nodejs npm
+sudo pacman -S git nodejs npm
 npm install hexo-cli -g
 ```
 
@@ -41,7 +41,7 @@ wget https://raw.githubusercontent.com/EvanNotFound/hexo-theme-redefine/main/_co
 
 在 `_config.yml` 文件中更改主题：
 
-```yml
+```yml _config.yml
 theme: redefine
 ```
 
@@ -51,10 +51,10 @@ theme: redefine
 
 ### 更改字体
 
-可以去 [Google Fonts](https://fonts.google.com) 上找字体。以下为示例：
+可以去 [Google Fonts](https://fonts.google.com) 上找字体。示例：
 
 在 `_config.redefine.yml` 中修改 `global.fonts.chinese`：
-```yml
+```yml _config.redefine.yml
 enable: true # Whether to enable custom chinese fonts
 family: "Noto Sans SC" # Font family
 url: "https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&family=Noto+Serif+SC:wght@200..900&display=swap" # Font URL to CSS file
@@ -69,7 +69,7 @@ npm install hexo-deployer-git --save
 ```
 
 github 上新建名为 `用户名.github.io` 的公开仓库，向 `_config.yml` 末尾添加：
-```yml
+```yml _config.yml
 deploy:
   type: git
   repo: https://github.com/用户名/用户名.github.io
@@ -98,7 +98,7 @@ npm install hexo-renderer-markdown-it-plus markdown-it-{mathjax3,imsize,attrs,br
 
 在 `_config.yml` 末尾添加：
 
-```yml
+```yml _config.yml
 markdown_it_plus:
     highlight: true
     html: true
@@ -131,7 +131,7 @@ markdown_it_plus:
 我简单 fork 了一下这个包，运行 `npm install https://github.com/berrylium0078/markdown-it-mathjax3` 安装 fork。
 
 然后 `_config.yml` 对应位置改成：
-```yml
+```yml _config.yml
 - plugin:
     name: markdown-it-mathjax3
     enable: true
@@ -144,8 +144,8 @@ markdown_it_plus:
 作为示例，添加一个萌娘百科的黑框[^2]。
 [^2]: [使用CSS实现隐藏汉字黑框](https://wangquanlikun.github.io/2023/03/18/css-moegirl)
 
-编辑 `_config.redefine.yml`，对应位置改成：
-```yml
+修改 `_config.redefine.yml`：
+```yml _config.redefine.yml
 inject:
   enable: true
   head:

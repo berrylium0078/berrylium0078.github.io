@@ -269,6 +269,8 @@ sudo pacman -S thunderbird xournalpp ark spectacle kolourpaint steam
 
 ### Thinkbook 补丁
 
-Thinkbook 2024 系列有个 bug，电脑睡眠后合盖会立刻关机，安装补丁 `ideapad-laptop-tb2024g6plus-dkms`。
+Thinkbook 2024 系列似乎普遍有个 bug，电脑睡眠后合盖会立刻关机，安装补丁 `ideapad-laptop-tb2024g6plus-dkms`。
 
-然而 AUR 上的包已经过时了，所以我们直接去上游 `github` [仓库](https://github.com/ty2/ideapad-laptop-tb2024g6plus)。
+然而 AUR 上的包已经过时了，所以我们直接去[上游 `github` 仓库](https://github.com/ty2/ideapad-laptop-tb2024g6plus)。
+
+upd 2025/4/1：在内核版本 `6.13.8-arch1-1` 中，电池供电（时睡眠？）虽然不会关机但是会导致电脑变非常卡（测试：使用 `stress --cpu 18` 烤鸡时 `grep cat /proc/cpuinfo | grep MHz` 显示每个核心的频率均不足 1GHz），安装上述补丁可以解决该问题。
