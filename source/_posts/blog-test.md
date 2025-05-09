@@ -5,7 +5,7 @@ categories: 博客搭建
 excerpt: 我是测试界面！
 ---
 
-想获得同款博客？[*戳我*](/2024/09/05/build-site/)
+想获得同款博客？{% post_link build-site 戳我 %}
 
 ## 字体测试
 

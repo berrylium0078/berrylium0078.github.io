@@ -63,5 +63,13 @@
 			"<span title=\"${2:你知道的太多了}\" class=\"heimu\">${1:secret}</span>$0"
 		],
 		"description": "heimu from moegirl"
-	}
+	},
+	"satisfies": {
+		"scope": "markdown",
+		"prefix": "satisfies",
+		"body": [
+			"s.\\ t.\\ ",
+		],
+	   "description": "LaTeX s.t."
+   },
 }

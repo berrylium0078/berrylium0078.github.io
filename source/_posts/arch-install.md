@@ -9,8 +9,6 @@ category: [瞎折腾,Linux]
 
 记录日用系统的安装流程，以备不时之需。
 
-但搬 wiki 没什么意思，所以我决定重点记录我个人的一些选择与理由，作为对 wiki 的补充。
-
 执行每一步操作前，请务必==确认你知道自己在做什么==。本文不做任何担保。
 <span title="你知道的太多了" class="heimu">It works on my machine</span>
 <span title="你知道的太多了" class="heimu">It worked last year</span>
@@ -23,7 +21,9 @@ RAM：32GB
 SSD：1TB
 {% endfolding %}
 
-## Part I.[基础安装](https://wiki.archlinuxcn.org/wiki/%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97)
+## Part I. 基础安装
+
+请与 [安装指南 - Arch Linux 中文维基](https://wiki.archlinuxcn.org/wiki/%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97)对比阅读。
 
 按照惯例，新手要在终端手敲命令完成安装！
 
@@ -37,11 +37,27 @@ SSD：1TB
 
 开机按 F1 进入 live 环境，其他电脑型号请自行百度「U盘启动 + 厂商/型号」获得相关教程。
 
+### 1.5 配置控制台键盘布局和字体
+
+键盘布局默认为美式键盘，不用管。
+
+字体文件位于 `/usr/share/kbd/consolefonts/` 目录，修改字体实例：
+
+```sh
+setfont ter-132b
+```
+
+### 1.6 验证引导模式为 `x64 UEFI`
+
+如果以下文件内容不是 $64$ 或文件不存在，请查阅 Arch Wiki。
+
+```sh
+cat /sys/firmware/efi/fw_platform_size
+```
+
 ### 1.7 联网
 
-其他可选方案：
-- 通过数据线连接手机，在手机里开启 USB 网络共享。
-- 连手机热点。
+我建议连网线，或者通过数据线连接手机并在手机里开启 USB 网络共享（安卓应该都支持）。
 
 ### 1.9-1.11 分区
 
@@ -52,7 +68,7 @@ SSD：1TB
 - btrfs 支持快照和数据校验等多种高级功能，并且 CoW 机制能保证数据一致性。
 - <span title="你知道的太多了" class="heimu">一部分人认为 btrfs 容易坏，但[官方](https://btrfs.readthedocs.io/en/latest/Hardware.html#hardware-as-the-main-source-of-filesystem-corruptions)认为大概率是硬件的问题</span>
 
-{% folding blue::关于分区的一些个人建议 %}
+{% folding blue::关于分区的一些建议 %}
 1. 将 EFI 分区挂载于 `/efi`（前提是电脑为 UEFI 引导！）
     - 可以减少 EFI 分区的空间占用。
     - 本人教训：260M 的 EFI 分区，装完 nvidia 驱动占用 370MB💥
@@ -86,19 +102,38 @@ curl -L 'https://archlinux.org/mirrorlist/?country=CN&protocol=https' -o /etc/pa
 nano /etc/pacman.d/mirrorlist
 ```
 
-### 2.3 安装必需的软件包
+### 2.2 安装必需的软件包
 
 ```sh
-pacstrap -K /mnt base base-devel linux linux-firmware btrfs-progs nano networkmanager wpa_supplicant iwd intel-ucode
+pacstrap -K /mnt base base-devel linux linux-firmware btrfs-progs nano vim networkmanager wpa_supplicant iwd intel-ucode
 ```
 
+- `nano`, `vim`, `emacs`：终端文本编辑器，新手推荐 `nano`。
 - `networkmanager`, `wpa_supplicant`, `iwd`：联网用的。
 - `btrfs-progs`：管理 `btrfs` 文件系统需要的工具。
 - `base-devel`：包含构建软件包的工具，AUR 上的包默认已经安装 `base-devel`。
 
-### 3.4 区域和本地化设置
+### 3.1-3.7 杂项
 
-为避免麻烦，先用英文，装完桌面再改成中文。（你也不想在终端里前往桌面要狂按 tab 或切输入法吧？）
+fstab 文件可用于定义磁盘分区，各种其他块设备或远程文件系统应如何装入文件系统。
+```sh
+genfstab -U /mnt > /mnt/etc/fstab
+cat /mnt/etc/fstab # 检查一下
+```
+
+chroot 到新系统中，完成后续配置。
+```sh
+arch-chroot /mnt
+```
+
+设置时区，主机名，root 密码
+```sh
+ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+echo "主机名" > /etc/hostname
+passwd # 设置 root 密码
+```
+
+最后是语言设置。为避免麻烦，先用英文，装完桌面再改成中文。
 
 编辑 `/etc/locale.gen`，取消注释 `en_US.UTF-8 UTF-8` 和 `zh_CN.UTF-8 UTF-8` 两行。
 

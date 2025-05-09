@@ -13,7 +13,7 @@ category: 博客搭建
 
 然后我自己又魔改了一番，记录一下过程。
 
-功能测试[*戳我*](/2024/11/04/test/)
+{% post_link blog-test 戳我前往功能演示页面 %}
 
 ## 安装 hexo 与 redefine 主题
 

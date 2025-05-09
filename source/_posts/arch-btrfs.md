@@ -60,8 +60,10 @@ sudo mount -o loop test.img /mnt
 - 使用交换文件而非交换分区。
 
 ```sh
+mkfs.fat -F 32 /dev/nvme0n1p1
 mkfs.btrfs /dev/nvme0n1p2
 mount -t btrfs /dev/nvme0n1p2 /mnt
+mount /dev/nvme0n1p1 /mnt/efi --mkdir
 ```
 
 ### 设计子卷布局
@@ -203,8 +205,6 @@ swapon /swap/swapfile
 ```
 
 推荐的交换空间大小大概是 $\max(M/2,\sqrt{M})+M\cdot H$ 其中 $M$ 为物理内存大小（单位 GB），$H$ 表示是否使用休眠功能。
-
-<span title="乖孩子不要学" class="heimu">虽然新电脑 32G 内存，但我感觉旧电脑 8GB 不打游戏够用，赌一手</span>
 
 编辑 `fstab`，追加：
 ```conf
