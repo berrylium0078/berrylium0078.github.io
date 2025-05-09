@@ -63,7 +63,6 @@ sudo mount -o loop test.img /mnt
 mkfs.fat -F 32 /dev/nvme0n1p1
 mkfs.btrfs /dev/nvme0n1p2
 mount -t btrfs /dev/nvme0n1p2 /mnt
-mount /dev/nvme0n1p1 /mnt/efi --mkdir
 ```
 
 ### 设计子卷布局
@@ -111,7 +110,6 @@ umount /mnt
 
 ```sh
 mount -o noatime,compress=zstd:3,subvol=@          /dev/nvme0n1p2 /mnt
-mount --mkdir /dev/nvme0n1p1 /mnt/boot
 mount --mkdir -o noatime,compress=zstd:3,subvol=@opt       /dev/nvme0n1p2 /mnt/opt
 mount --mkdir -o noatime,compress=zstd:3,subvol=@home      /dev/nvme0n1p2 /mnt/home
 mount --mkdir -o noatime,compress=zstd:3,subvol=@root      /dev/nvme0n1p2 /mnt/root
@@ -120,6 +118,7 @@ mount --mkdir -o noatime,compress=zstd:3,subvol=@var_log   /dev/nvme0n1p2 /mnt/v
 mount --mkdir -o noatime,compress=zstd:3,subvol=@var_tmp   /dev/nvme0n1p2 /mnt/var/tmp
 mount --mkdir -o noatime,compress=zstd:3,subvol=@var_cache /dev/nvme0n1p2 /mnt/var/cache
 mount --mkdir -o noatime,compress=zstd:3,subvol=@docker    /dev/nvme0n1p2 /mnt/var/lib/docker
+mount /dev/nvme0n1p1 /mnt/efi --mkdir
 ```
 
 - `-o` 选项表示指定挂载选项，后面的部分不能有空格。

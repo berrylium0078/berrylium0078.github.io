@@ -276,7 +276,15 @@ sudo pacman -S yay
 yay -S visual-studio-code-bin vscode-xdg-patch-hook
 ```
 
-按 Ctrl+Comma， 打开设置，修改字体，推荐 Fira Code（运行 `pacman -S ttf-fira-code` 安装）。
+按 Ctrl+Comma，打开设置，修改字体，推荐 Fira Code（运行 `pacman -S ttf-fira-code` 安装）。
+
+示例：
+```json settings.json
+{
+    "editor.fontFamily": "'Fira Code', 'Noto Sans Mono CJK SC'",
+    "editor.fontLigatures": true
+}
+```
 
 ### 代理
 
