@@ -133,6 +133,11 @@ echo "主机名" > /etc/hostname
 passwd # 设置 root 密码
 ```
 
+启动网络服务：
+```sh
+systemctl enable NetworkManager.service
+```
+
 最后是语言设置。为避免麻烦，先用英文，装完桌面再改成中文。
 
 编辑 `/etc/locale.gen`，取消注释 `en_US.UTF-8 UTF-8` 和 `zh_CN.UTF-8 UTF-8` 两行。
@@ -168,8 +173,9 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 ```sh
 pacman -S sddm plasma konsole dolphin firefox sof-firmware
-systemctl enable {sddm,NetworkManager}.service
+systemctl enable sddm.service
 ```
+
 - `sddm`：显示管理器
 - `konsole`：终端
 - `dolphin`：文件管理器
