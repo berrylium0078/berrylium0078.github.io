@@ -1,0 +1,12 @@
+kbd {
+    border-radius:3px;
+    border:1px solid gray;
+    display: inline-block;
+    font-size: 11px;
+    box-shadow:1px 0 1px 0 #eee, 0 2px 0 2px #ccc, 0 2px 0 3px #444;
+    margin:2px 3px;
+    padding:0px 5px;
+    line-height: 20px;
+    display: inline-block;
+    transform: translate(0, -4px)
+}
