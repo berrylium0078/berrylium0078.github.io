@@ -67,6 +67,7 @@ cat /sys/firmware/efi/fw_platform_size
 - ext4 更加稳定，读写速度更快。
 - btrfs 支持快照和数据校验等多种高级功能，并且 CoW 机制能保证数据一致性。
 - <span title="你知道的太多了" class="heimu">一部分人认为 btrfs 容易坏，但[官方](https://btrfs.readthedocs.io/en/latest/Hardware.html#hardware-as-the-main-source-of-filesystem-corruptions)认为大概率是硬件的问题</span>
+- <span title="你知道的太多了" class="heimu">据说从损坏的 btrfs 里面恢复数据比较困难，请做好数据备份</span>
 
 {% folding blue::关于分区的一些建议 %}
 1. 将 EFI 分区挂载于 `/efi`（前提是电脑为 UEFI 引导！）
@@ -92,8 +93,6 @@ cat /sys/firmware/efi/fw_platform_size
 这次我试用了 btrfs，过程见我的[*这篇博文*](/2024/10/31/arch-btrfs/)
 
 ### 2.1 选择镜像站
-
-<span title="你知道的太多了" class="heimu">我觉得 wiki 废话有点多</span>
 
 下载中国镜像站列表并编辑，取消注释其中要使用的镜像站。
 
@@ -133,11 +132,6 @@ echo "主机名" > /etc/hostname
 passwd # 设置 root 密码
 ```
 
-启动网络服务：
-```sh
-systemctl enable NetworkManager.service
-```
-
 最后是语言设置。为避免麻烦，先用英文，装完桌面再改成中文。
 
 编辑 `/etc/locale.gen`，取消注释 `en_US.UTF-8 UTF-8` 和 `zh_CN.UTF-8 UTF-8` 两行。
@@ -159,6 +153,15 @@ LANG=en_US.UTF-8
 pacman -S efibootmgr grub
 grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+### 最后一步
+
+前面的内容大部分 archinstall 都能通过简单的配置帮你完成，如果想要更灵活的分区方案，可以手动分完选择 “Pre-mounted configuration”，mount point 就是新系统的根目录当前的挂载点，一般为 `/mnt`（待验证）。接下来 archinstall 会 chroot 到新系统，你可以完成进一步配置。
+
+启用网络服务：（不然重启后连不了网）
+```sh
+systemctl enable NetworkManager.service
 ```
 
 ## Part II. 安装桌面
@@ -242,7 +245,7 @@ sudo pacman -S pipewire-{jack,alsa,pulse} wireplumber
 systemctl --user enable --now pipewire{,-pulse}
 ```
 
-## 其他软件及配置
+## Part III. 其他软件及配置
 
 ### 启用 archlinuxcn 源
 
@@ -300,7 +303,7 @@ git config --global http.proxy http://127.0.0.1:7890
 git config --global https.proxy https://127.0.0.1:7890
 ```
 
-### 其他软件
+### 杂项
 
 按需安装。分别是：邮箱，笔记，压缩包管理器，截图工具，画图，[蒸汽学原理]{.heimu title="你知道的太多了"}。
 
