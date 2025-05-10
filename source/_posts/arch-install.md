@@ -104,7 +104,7 @@ nano /etc/pacman.d/mirrorlist
 ### 2.2 安装必需的软件包
 
 ```sh
-pacstrap -K /mnt base base-devel linux linux-firmware btrfs-progs nano vim networkmanager wpa_supplicant iwd intel-ucode
+pacstrap -K /mnt base base-devel linux linux-firmware btrfs-progs nano vim networkmanager wpa_supplicant iwd usb_modeswitch intel-ucode
 ```
 
 - `nano`, `vim`, `emacs`：终端文本编辑器，新手推荐 `nano`。
@@ -161,7 +161,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 启用网络服务：（不然重启后连不了网）
 ```sh
-systemctl enable NetworkManager.service
+systemctl enable NetworkManager
 ```
 
 ## Part II. 安装桌面
@@ -176,7 +176,7 @@ systemctl enable NetworkManager.service
 
 ```sh
 pacman -S sddm plasma konsole dolphin firefox sof-firmware
-systemctl enable sddm.service
+systemctl enable sddm bluetooth
 ```
 
 - `sddm`：显示管理器

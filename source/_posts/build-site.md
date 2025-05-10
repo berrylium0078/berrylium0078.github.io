@@ -15,13 +15,29 @@ category: 博客搭建
 
 {% post_link blog-test 戳我前往功能演示页面 %}
 
+{% folding green::克隆本博客 %}
+安装依赖：
+```sh
+sudo pacman -S git nodejs npm
+npm install hexo-cli -g
+```
+
+然后
+
+```sh
+git clone https://github.com/berrylium0078/berrylium0078.github.io
+cd berrylium0078.github.io
+npm install
+```
+{% endfolding %}
+
 ## 安装 hexo 与 redefine 主题
 
 {参考|搬运}官方教程[^1]
 
 [^1]: [hexo](https://hexo.io/zh-cn/)，[theme redefine](https://redefine-docs.ohevan.com/getting-started)
 
-首先使用适合你的操作系统的方法安装 nodejs 和 npm。
+安装依赖：
 ```sh
 sudo pacman -S git nodejs npm
 npm install hexo-cli -g

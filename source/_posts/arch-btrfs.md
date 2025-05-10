@@ -206,7 +206,7 @@ swapon /swap/swapfile
 推荐的交换空间大小大概是 $\max(M/2,\sqrt{M})+M\cdot H$ 其中 $M$ 为物理内存大小（单位 GB），$H$ 表示是否使用休眠功能。
 
 编辑 `fstab`，追加：
-```conf
+```conf /etc/fstab
 /swap/swapfile        none        swap        defaults      0 0
 ```
 以在开机时自动启用交换文件。
@@ -220,15 +220,25 @@ swapon /swap/swapfile
 ```
 btrfs inspect-internal map-swapfile -r /swap/swapfile
 ```
+
 然后创建 `/etc/tmpfiles.d/hibernation.conf`，写入如下内容，其中*偏移量*为上述命令的输出：
 ```conf
 #    Path                   Mode UID  GID  Age Argument
 w    /sys/power/resume_offset  -    -    -    -   偏移量
 w    /sys/power/image_size  -    -    -    -   0
-w    /sys/power/resume  -    -    -    -   /dev/nvme0n1p2
+w    /sys/power/resume  -    -    -    -   /dev/nvme0n1p2(交换文件所在分区)
 ```
 
 编辑 `/etc/mkinitcpio.conf`，修改 `HOOKS=()` 一行，添加 `resume`（必须在 `udev` 后面）（以下仅为示例）：
 ```conf
 HOOKS=(base udev autodetect microcode modconf kms keyboard keymap consolefont block filesystems resume fsck)
+```
+
+然后    ostname command is not located in my path, it is located at /usr/lib/gettext/hostname.
+
+    I assume symlinking to it in /usr/bin would fix any issues.. right?
+
+You need to update your system, no symlinking is necessary.
+```sh
+sudo mkinitcpio -P
 ```
