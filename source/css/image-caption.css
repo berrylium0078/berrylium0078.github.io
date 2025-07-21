@@ -1,0 +1,7 @@
+/* style fix for the pandoc extension implicit-figures */
+figure:not([class]) > figcaption {
+  text-align: center;
+}
+figure:not([class]) img {
+  margin: 0 auto 0px;
+}
