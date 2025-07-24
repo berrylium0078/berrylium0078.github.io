@@ -58,16 +58,15 @@ $\begin{equation}1\end{equation}$
 $\begin{equation}1\label{a}\end{equation}$
 $$2\tag{b}\label{b}$$
 
-$\ref{a},\ref{b}$
 
 ```md
 $\ref{a},\ref{c}$
 $\begin{equation}1\end{equation}$
 $\begin{equation}1\label{a}\end{equation}$
 $$2\tag{b}\label{b}$$
-
-$\ref{a},\ref{c}$
 ```
+
+$\ref{a},\ref{b}$
 
 {% note green fa-lightbulb flat %}
 The hyper link for labeled equation is `{postURL}#mjx-eqn%3A{label}` --- where spaces inside *label* are replaced with underscores --- according to the [MathJax3.2 Documentation](https://docs.mathjax.org/en/v3.2-latest/input/tex/extensions/tagformat.html)

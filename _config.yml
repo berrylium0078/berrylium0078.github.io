@@ -8,13 +8,13 @@ subtitle: 'Berrylium Production Complex'
 description: ''
 keywords:
 author: 'Berrylium0078'
-language: en
+language: 'zh-CN'
 timezone: 'Asia/Shanghai'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: https://berrylium0078.github.io
-permalink: :year/:month/:day/:title/
+permalink: :year-:month/:title/
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
@@ -110,4 +110,4 @@ mathjax:
     # see http://docs.mathjax.org/en/latest/options/input/tex.html#tex-extension-options for more detail
 
 pandoc:
-  args: ["--mathjax", "--from", "markdown+mark", "--no-highlight"]
+  args: ["--mathjax", "--from", "markdown+mark-implicit_figures", "--no-highlight", "--lua-filter=pandoc/header-links.lua"]

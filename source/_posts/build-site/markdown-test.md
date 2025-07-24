@@ -6,9 +6,9 @@ categories: "build site"
 description: "This page test functionality of pandoc flavored markdown syntax, including fancy ordered lists, grid tables, footnotes, etc."
 ---
 
-## Headings { #foo}
+## Headings
 
-### Attributes { #attr}
+### Attributes { #attr .anchor-link}
 
 [Explicit](#attr) and [Implicit][Attributes] references.
 
@@ -293,22 +293,11 @@ $\tuple{a, b, c}$
 
 ## Images
 
-Implicit Figure:
-
-![figure](/img/butterfly-icon.png){height=150px}
-
-Image:
-![image](/img/butterfly-icon.png){height=150px}
+Image: ![image](/img/butterfly-icon.png){height=150px}
 
 Inline image: {% inlineImg /img/butterfly-icon.png 150px %}
 
-
-    Implicit Figure:
-
-    ![figure](/img/butterfly-icon.png){height=150px}
-
-    Image:
-    ![image](/img/butterfly-icon.png){height=150px}
+    Image: ![image](/img/butterfly-icon.png){height=150px}
 
     Inline image: {% inlineImg /img/butterfly-icon.png 150px %}
 
@@ -325,6 +314,8 @@ This is a warning within a warning.
 [This is *some text*]{.class key="val"}
 
 ## Foot notes
+
+[Explicit](#attr) and [Implicit][Attributes] references.
 
 Here is a footnote reference,[^1] and another.[^longnote]
 
