@@ -1044,6 +1044,8 @@ inject:
   head:
     - <link rel="stylesheet" href="/css/catppuccin.css">
     - <link rel="stylesheet" href="/css/math-anchor.css">
+    - <link rel="stylesheet" href="/css/heimu.css">
+    - <link rel="stylesheet" href="/css/keybd.css">
     - <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap"> 
     # - <link rel="stylesheet" href="/xxx.css">
   bottom:

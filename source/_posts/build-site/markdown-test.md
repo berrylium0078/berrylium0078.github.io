@@ -88,32 +88,32 @@ list item.
 ### Ordered lists
 
 1. Arabic numerals
-#. second.
+#. Second.
 i. Roman numerals
-#. second.
+#. Second.
 a. Lowercase letters
-#. second.
+#. Second.
 A.  Uppercase letters need two spaces.
-#.  second.
+#.  Second.
 (A) Parentheses enclosed uppercase letters
-(#) second.
+(#) Second.
 A) Right parentheses uppercase letters
-#) second.
+B) Second.
 
 <!---->
 
     1. Arabic numerals
-    #. second.
+    #. Second.
     i. Roman numerals
-    #. second.
+    #. Second.
     a. Lowercase letters
-    #. second.
+    #. Second.
     A.  Uppercase letters need two spaces.
-    #.  second.
+    #.  Second.
     (A) Parentheses enclosed uppercase letters
-    (#) second.
+    (#) Second.
     A) Right parentheses uppercase letters
-    #) second.
+    #) Second.
 
 ### Task lists
 
@@ -166,6 +166,18 @@ some text...
 |               |               | - tasty            |
 +---------------+---------------+--------------------+
 
+: Grid table with row & column spans
+
++---------------------+----------+
+| Property            | Earth    |
++=============+=======+==========+
+|             | min   | -89.2 °C |
+| Temperature +-------+----------+
+| 1961-1990   | mean  | 14 °C    |
+|             +-------+----------+
+|             | max   | 56.7 °C  |
++-------------+-------+----------+
+
 : Tic-Tac-Toe
 
 +---+---+---+
@@ -197,6 +209,18 @@ some text...
 | Oranges       | $2.10         | - cures scurvy     |
 |               |               | - tasty            |
 +---------------+---------------+--------------------+
+
+: Grid table with row & column spans
+
++---------------------+----------+
+| Property            | Earth    |
++=============+=======+==========+
+|             | min   | -89.2 °C |
+| Temperature +-------+----------+
+| 1961-1990   | mean  | 14 °C    |
+|             +-------+----------+
+|             | max   | 56.7 °C  |
++-------------+-------+----------+
 
 : Tic-Tac-Toe
 
@@ -252,19 +276,7 @@ H~2~O is a liquid. 2^10^ is 1024.
 
 ## Verbatim
 
-`int main()`{.hljs .cpp} `` `int main()`{.hljs .cpp} ``
-
-To write ```` ``` ````, use:
-
-    ```` ``` ````
-
-## LaTeX macros
-
-\newcommand{\tuple}[1]{\langle #1 \rangle}
-$\tuple{a, b, c}$
-
-    \newcommand{\tuple}[1]{\langle #1 \rangle}
-    $\tuple{a, b, c}$
+`int main()`{.hljs .cpp} (inline code blocks do not support syntax highlighting) `` `int main()`{.hljs .cpp} ``
 
 ## Links
 
