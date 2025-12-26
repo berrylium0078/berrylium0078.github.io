@@ -1,6 +1,6 @@
 ---
 layout: draft
-title: Some Tips Collection for Arch Linux
+title: Some Tips for Arch Linux
 date: 2025-07-26 17:12:56
 tags:
 ---

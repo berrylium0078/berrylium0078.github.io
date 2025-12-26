@@ -8,7 +8,7 @@ description: "This page test functionality of pandoc flavored markdown syntax, i
 
 ## Headings
 
-### Attributes { #attr .anchor-link}
+### Attributes { #attr}
 
 [Explicit](#attr) and [Implicit][Attributes] references.
 
@@ -20,12 +20,12 @@ description: "This page test functionality of pandoc flavored markdown syntax, i
 
     if (a > 3) {
         moveShip(5 * gravity, DOWN);
-
     }
 
 ### Fenced code blocks
 
 ```cpp
+#include <bits/stdc++.h>
 int main() {
     if (1 <= 2) {
         return 0;
@@ -191,10 +191,16 @@ some text...
 : Sample pipe table.
 
 | Right | Left | Default | Center |
-|------:|:-----|---------|:------:|
+|------: | :----- | --------- | :------: |
 |   12  |  12  |    12   |    12  |
 |  123  |  123 |   123   |   123  |
 |    1  |    1 |     1   |     1  |
+
+
+| a | b |
+|---|---|
+| a | b |
+
 
 
 ```markdown
@@ -326,8 +332,6 @@ This is a warning within a warning.
 [This is *some text*]{.class key="val"}
 
 ## Foot notes
-
-[Explicit](#attr) and [Implicit][Attributes] references.
 
 Here is a footnote reference,[^1] and another.[^longnote]
 

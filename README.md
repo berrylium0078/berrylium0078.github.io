@@ -40,7 +40,8 @@ Create a repository on Github, named `<owner>.github.io`.
 > Don’t forget to update the `url` field in your `_config.yml` to match your GitHub Pages domain, e.g., https://<owner>.github.io.
 
 > [!CAUTION]
-> Avoid using a [project site](https://docs.github.com/en/repositories/creating-and-managing-repositories/about-repositories#types-of-github-pages-sites), as the root path `/` will map to `http(s)://<owner>.github.io` instead of `http(s)://<owner>.github.io/<repo>`.
+> Avoid using a [project site](https://docs.github.com/en/repositories/creating-and-managing-repositories/about-repositories#types-of-github-pages-sites),
+as the root path `/` will map to `http(s)://<owner>.github.io` instead of `http(s)://<owner>.github.io/<repo>`.
 
 The repository includes a out-of-the-box workflow to publish the site. All you need to do is to configure your site to [Publish with GitHub Actions](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site#publishing-with-a-custom-github-actions-workflow).
 
@@ -63,7 +64,7 @@ If you are not satisfied with my tweaks, here are the related materials:
   - `pandoc/*`
 - Theme *Butterfly* tutorials:
   - [Customize code coloring](https://butterfly.js.org/en/posts/customize-code-coloring/).
-  - [Customize Fonts](https://butterfly.js.org/en/posts/butterfly-docs-en-theme-config/#Custom-Fonts-and-Font-Sizes)
-  - [Inject](https://butterfly.js.org/en/posts/butterfly-docs-en-theme-config/#Inject)
+  - [Customize Fonts](https://butterfly.js.org/en/posts/butterfly-docs-en-theme-config/#Custom-Fonts-and-Font-Sizes).
+  - [Inject](https://butterfly.js.org/en/posts/butterfly-docs-en-theme-config/#Inject).
 
 And note that in order to use web fonts, you need to inject the css from Google/Adobe Fonts.
